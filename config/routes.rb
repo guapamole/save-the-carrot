@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       resources :cookbooks, only: [:show]
     end
   end
+
   resources :ingredients, only: [:destroy]
 end
