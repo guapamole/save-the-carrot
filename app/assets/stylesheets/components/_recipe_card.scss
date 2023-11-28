@@ -16,6 +16,19 @@
   border-radius: 8px;
 }
 
+.title_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus_button {
+  width: 24px; /* Adjust the width and height of the button as needed */
+  height: 24px;
+  /* Add styles for positioning the button */
+  margin-top: -5px; /* Adjust the margin to align with the title */
+}
+
 .title_layout {
 
   font-size: 20px;
