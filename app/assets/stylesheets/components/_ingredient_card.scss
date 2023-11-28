@@ -1,0 +1,133 @@
+
+.container {
+  position: relative;
+  width: 150px;
+ border: 1px solid #ccc; /* à enlever */
+  width: 150px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 16px;
+ background-color : #FBDDBA;
+}
+
+.ingredient_card, .ingredient_pic {
+  position: absolute;
+  width: 123px;
+  height: 100px;
+}
+
+.ingredient_pic {
+  background-color: white; /* Insérer image */
+  top: 19px;
+  left: 14px;
+  border-radius: 8px;
+}
+
+.ingredient_name {
+  color: #000;
+  text-align: right;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  position: absolute;
+  top: 110px;
+  left: 14px;
+  width: 123px;
+}
+
+.ingredient_description {
+  color: #000;
+  text-align: right;
+  font-family: Manrope;
+  font-size: 10px;
+  font-style: light;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  top: 135px;
+  left: 14px;
+  width: 123px;
+}
+
+.btn-delete {
+background-color: white;
+width: 25px;
+height: 25px;
+flex-shrink: 0;
+border-radius: 25px;
+border: 1px solid #ccc; /* à enlever */
+top: 7px;
+left: 118px;
+background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
+background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
+background-repeat: no-repeat;
+}
+
+.ingredient_pic, .btn-delete {
+  position: absolute;
+}
+
+.btn-plus {
+	background-color: white;
+	width: 25px;
+	height: 25px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	bottom: 8px;
+	right: 20px;
+  background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
+  background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
+  background-repeat: no-repeat;
+}
+
+.container, .btn-plus {
+	position: absolute;
+}
+
+.btn-minus {
+	background-color: white;
+	width: 25px;
+	height: 25px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	bottom: 8px;
+	left: 20px;
+  background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
+  background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
+  background-repeat: no-repeat;
+}
+
+.container, .btn-minus {
+	position: absolute;
+}
+
+.quantity {
+  color: #000;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+	position: absolute;
+	top: 155px;
+	right: 69px;
+}
+
+.container, .btn-minus {
+	position: absolute;
+}
+
+
+
+// HTML
+// <div class="container">
+// <div class="ingredient_card"></div>
+// <div class="ingredient_pic"></div>
+// <button class="btn-delete">s</button>
+// <p class="ingredient_name"> Pizza </p>
+// <p class="ingredient_description"> X jours de vie </p>
+// <button class="btn-plus"> + </button> <p class="quantity"> 1 </p><button class="btn-minus"> - </button>
+
+// </div>
