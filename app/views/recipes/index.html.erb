@@ -1,0 +1,7 @@
+<% @recipes["recipes"].each do |recipe| %>
+  <h3><%= recipe["name"] %></h3>
+  <p>difficulty: <%= recipe["difficulty"] %></p>
+  <p>time: <%= recipe["preptime"] %></p>
+
+  <img src="<%= recipe['img'] %>" alt="" width="256">
+<% end %>
