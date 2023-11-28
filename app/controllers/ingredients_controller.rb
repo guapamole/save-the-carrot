@@ -37,4 +37,5 @@ class IngredientsController < ApplicationController
   def ingredient_params
     params.require(:ingredient).permit(:name, :quantity, :purchase_date)
   end
+
 end
