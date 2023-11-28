@@ -1,0 +1,27 @@
+
+// Navbar position
+.navbar {
+  // display: flex;
+  // justify-content: center;
+  // align-items: end;
+
+  background-color: #F28E19;
+  width: 100%;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 43px 43px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.navbar-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  // background: url("app/assets/images/icons/livre.png"), lightgray 50% / cover no-repeat;
+}
