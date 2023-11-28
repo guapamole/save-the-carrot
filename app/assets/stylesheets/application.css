@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ /* SCSS components */
+ @import "components/big_btn";
+ @import "components/big_header";
+ @import "components/ingredient_card";
+ @import "components/navbar";
+ @import "components/orange_form";
+ @import "components/recipe_card";
+ @import "components/small_header";
+ @import "components/square_btn";
+ @import "components/validated_ingredient_card";
