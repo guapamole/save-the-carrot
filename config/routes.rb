@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   end
   resources :recipes, only: [:index, :show]
   resources :ingredients, only: [:destroy]
-
 end
