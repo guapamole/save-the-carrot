@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
     ingredients_list = current_user.ingredients.map(&:name).join(", ")
 
     @recipes = GenerateRecipes.new(current_user).generate(with_images: true)
+    @recipe = Recipe.new
     # @cookbook = Cookbook.new
     # debugger
     # recipe_name = results_recipe.first["name"]
@@ -29,7 +30,15 @@ class RecipesController < ApplicationController
 
     # @recipe.save
   end
-  def new
 
+  def create
+    @recipe = Recipe.new
+    @recipe.name = params[:name]
+    @recipe.difficulty = params[:difficulty]
+    @recipe.preptime = params[:preptime]
+    @recipe.cookbook = current_user.cookbooks.first
+    if @recipe.save
+      redirect_to cookbook_path(current_user.cookbooks.first)
+    end
   end
 end
