@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Selectionnez les filtres afin de générer une recette: </h1>
+    <div class="filter-recipe-form">
+      <%= form_for recipes_path do |f| %>
+        <div class="display-ingredient-checkboxes">
+          <% @ingredients.each do |ingredient| %>
+            <%= f.label ingredient.name %>
+            <%= f.check_box ingredient %>
+          <% end %>
+        </div>
+
+        <div data-controller="quantity">
+          <%= f.label :quantity, "Nombre de Personnes :" %>
+          <div class="quantity-input">
+            <button type="button" data-action="click->quantity#decrement">-</button>
+              <%= f.number_field :quantity, data: { quantity_target: "nombre" }, :value => 1 %>
+            <button type="button" data-action="click->quantity#increment">+</button>
+          </div>
+        </div>
+
+
+        <div>
+          <%= f.button "Entrée" %>
+          <%= f.button "Plat" %>
+          <%= f.button "Dessert" %>
+        </div>
+
+        <%= f.submit "Générer les recettes" %>
+      <% end %>
+    </div>
+</div>

@@ -3,3 +3,5 @@
 <% @ingredients.each do |ingredient| %>
   <p><%= ingredient.name %></p>
 <% end %>
+
+<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
