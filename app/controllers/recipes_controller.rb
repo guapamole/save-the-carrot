@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
     ingredients_list = current_user.ingredients.map(&:name).join(", ")
 
     @recipes = GenerateRecipes.new(current_user).generate(with_images: true)
+    # @cookbook = Cookbook.new
     # debugger
     # recipe_name = results_recipe.first["name"]
     # recipe_minute = result_recipe["name"]
@@ -27,5 +28,8 @@ class RecipesController < ApplicationController
     # @recipe.photo.attach(io: file, filename: "#{id}.jpg", content_type: "image/png")
 
     # @recipe.save
+  end
+  def new
+
   end
 end
