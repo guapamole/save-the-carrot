@@ -1,18 +1,34 @@
+<%# DEBUT STYLE--------------------------------------------- %>
+
 <style>
 body {
   background-color: #F28E19;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
 }
+
 </style>
+<%# FIN STYLE--------------------------------------------- %>
 
-<div class="row">
-<div class="col aligne-items ">
-<button class="btn-log">S'inscrire</button>
-<button class="btn-log">Me connecter</button>
-</div>
+<div class="titre">
+<h1 id="titre-hp">Save the carrot</h1>
 </div>
 
+<div class="logo">
+<%= cl_image_tag("cvkfyt9dwokovu1karo2") %>
+</div>
+
+<% unless user_signed_in? %>
+  <div class="fixed-bottom">
+    <div class="buttons-container">
+      <%= link_to "S'inscrire",  new_user_session_path, class:"btn-log" %>
+      <%# <button class="btn-log">S'inscrire</button> %>
+    </div>
+
+    <div class="buttons-container">
+        <%= link_to "Me connecter",  user_session_path, class:"btn-log" %>
+    </div>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+<% end %>
