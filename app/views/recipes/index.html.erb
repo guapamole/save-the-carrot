@@ -19,7 +19,7 @@
           <p class="time_difficulty_layout">
             <span class="time_layout">Time: <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> min</span>
             <span class="difficulty_layout">Difficulty: <%= recipe["difficulty"] %></span>
-            <%= link_to "enregistrer", cookbook_path(current_user.cookbooks.first)%>
+            <%= link_to "enregistrer", recipes_path(@recipe, recipe), data: {turbo_method: :post} %>
         </p>
 
 
