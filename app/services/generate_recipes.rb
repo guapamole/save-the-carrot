@@ -1,6 +1,9 @@
 class GenerateRecipes
-  def initialize(user)
+  def initialize(user, ingredients, quantity, meal_type)
     @user = user
+    @ingredients = ingredients
+    @quantity = quantity
+    @meal_type = meal_type
     @client = OpenAI::Client.new
   end
 
@@ -29,10 +32,10 @@ class GenerateRecipes
   private
 
   def list
-    @user.ingredients.map(&:name).join(", ")
+    @ingredients
   end
 
   def message
-    "Donne moi une liste en format json (clé recipes) de recettes simples avec les ingredients #{list}. Avant la liste, peux-tu indiquer le nom de chaque recettes (json clé name), la difficulté (sur 5), preptime, cooking_time, meal-type(entrée, plats, desserts), et le nombre de personne."
+    "Donne moi une liste en format json (clé recipes) de recettes simples avec les ingredients #{list}. Avant la liste, peux-tu indiquer le nom de chaque recettes (json clé name), la difficulté (sur 5), preptime, cooking_time, #{@meal_type}, et le nombre de personne #{@quantity}."
   end
 end
