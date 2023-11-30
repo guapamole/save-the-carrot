@@ -1,0 +1,28 @@
+.footer {
+  background-color: $orange;
+  height: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  justify-content: space-between;
+}
+
+.icons-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  margin-left: 55px;
+  margin-right: 55px;
+  padding-top: 7px;
+
+
+}
+
+.icons-footer img {
+  width: 30px; /* Ou la largeur souhaitée */
+  height: auto; /* Pour maintenir le rapport hauteur/largeur */
+}
