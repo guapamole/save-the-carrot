@@ -1,0 +1,23 @@
+<div class="footer">
+  <div class="icons-footer">
+    <%#= cl_image_tag("cvkfyt9dwokovu1karo2") %>
+    <%= link_to ingredients_path do %>
+      <%= image_tag "refrigerateur.png", alt: "Le Wagon", width: 40 %>
+      <p>Mon frigo</p>
+    <% end %>
+
+    <%= link_to cookbook_path(current_user) do %>
+      <%= image_tag "open-book.png", alt: "Le Wagon", width: 40 %>
+      <p>Mon frigo</p>
+     <% end %>
+
+    <%= link_to ingredients_path do %>
+      <%= image_tag "rabbit.png", alt: "Le Wagon", width: 40 %>
+    <% end %>
+
+  </div>
+</div>
+
+   <%= link_to root_path do %>
+      <%= image_tag "refrigerateur.png", alt: "Le Wagon", width: 40 %>
+    <% end %>

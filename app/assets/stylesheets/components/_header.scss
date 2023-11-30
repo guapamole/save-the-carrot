@@ -1,0 +1,15 @@
+.header {
+  background-color: $orange;
+  height: 50px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content-header {
+  margin-top: 50px;
+
+}

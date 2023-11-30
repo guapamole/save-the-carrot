@@ -5,7 +5,6 @@
 body {
   background-color: #F28E19;
 }
-
 </style>
 <%# FIN STYLE--------------------------------------------- %>
 
@@ -14,15 +13,19 @@ body {
 </div>
 
 <div class="logo">
-<%= cl_image_tag("cvkfyt9dwokovu1karo2") %>
+<%= link_to ingredients_path do %>
+  <%= image_tag("logo.png", class: "image-logo") %>
+<% end %>
 </div>
 
 <% unless user_signed_in? %>
   <div class="fixed-bottom">
+  <div class="btnmilieu">
     <div class="buttons-container">
       <%= link_to "S'inscrire",  new_user_session_path, class:"main_btn" %>
       <%# <button class="btn-log">S'inscrire</button> %>
     </div>
+  </div>
 
     <div class="buttons-container">
         <%= link_to "Me connecter",  user_session_path, class:"main_btn" %>
@@ -30,6 +33,7 @@ body {
   </div>
 <% end %>
 
+
 <% if user_signed_in? %>
-  <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+  <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
 <% end %>
