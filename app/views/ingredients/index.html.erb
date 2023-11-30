@@ -5,3 +5,25 @@
 <% end %>
 
 <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
+
+
+<h1 class="title">Rendu front test</h1>
+
+<% @ingredients.each do |ingredient| %>
+  <div class="container">
+    <div class="ingredient_card">
+    <div class="ingredient_pic"></div>
+    <button class="btn-delete">s</button>
+    <p class="ingredient_name"> <%= ingredient.name %> </p>
+    <p class="ingredient_description"> Acheté le <%= ingredient.purchase_date %> </p>
+    <%# ingredient.purchase_date - Date.now %>
+    <button class="btn-plus"> + </button> <p class="quantity"> <%= ingredient.quantity %> </p><button class="btn-minus"> - </button>
+    </div>
+  </div>
+
+<% end %>
+
+<button class="main_btn"> Générer une recette </button>
+<%# Intégrer lien vers filtres  %>
+
+<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
