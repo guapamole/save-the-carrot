@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.title h1 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  align-items: start;
+}
