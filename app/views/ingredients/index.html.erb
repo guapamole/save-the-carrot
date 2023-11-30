@@ -9,7 +9,7 @@
  <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
 ------>
 <div class="main-container mt-4">
-  <div> <h1 class="title">FRIGO</h1></div>
+  <div class = "titre-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %> <h1 class="title-frigo">FRIGO</h1></div>
   <div class="instruction ms-4"><p> Oh ! Votre frigo est bien rempli !</p></div>
 
 <div class="container">
@@ -18,20 +18,22 @@
       <div class="col-12 col-sm-6 col-md-4"> <!-- Utilisation de différentes tailles de colonnes pour différents écrans -->
         <div class="card_design">
 
-          <div class="image">
-            <div class="img_layout"></div>
+          <div class="image-plat">
+            <%= image_tag("plat.jpeg", class:"plat-image") %>
+            <%# <div class="img_layout"></div> %>
           </div>
 
           <div class="content row">
           <%# <button class="btn-delete">s</button> %>
-          <p class="title_layout mt-1"><%= ingredient.name %></p>
-          <p class="time_layout">Acheté le <%= ingredient.purchase_date %> D A T E</p>
+          <p class="title_layout" id="number-quantity2"><%= ingredient.name %></p>
+          <p class="time_layout">Acheté le : <%= ingredient.purchase_date %> D A T E</p>
           <%# ingredient.purchase_date - Date.now %>
-          <div class="d-flex align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-start">
             <button class="plus_button"> - </button>
-              <div><p class="quantity"><%= ingredient.quantity %> quantity </p></div>
+              <p id="number-quantity"><%= ingredient.quantity %></p>
             <button class="plus_button"> + </button>
           </div>
+
         </div>
 
 
