@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+
+
+body {
+  background-color: #F28E19;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.titre {
+  height: 40%;
+}
+
+#titre-hp {
+  color: white;
+  text-align: center;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  line-height: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.logo {
+  text-align: center;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-bottom: 20px;
+}

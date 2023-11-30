@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Selectionnez les filtres afin de générer une recette: </h1>
+    <div class="filter-recipe-form">
+      <%= simple_form_for :choices, url: recipes_path, method: :get do |f| %>
+        <div class="display-ingredient-checkboxes">
+        <%= f.input :ingredients, collection: current_user.ingredients, as: :check_boxes %>
+        </div>
+
+        <div data-controller="quantity">
+          <div class="quantity-input">
+            <button type="button" data-action="click->quantity#decrement">-</button>
+              <%= f.input :quantity, as: :numeric, input_html: { value: 1, data: { quantity_target: "nombre" } } %>
+            <button type="button" data-action="click->quantity#increment">+</button>
+          </div>
+        </div>
+
+
+        <div>
+          <%= f.input :meal_type, collection: ['Entrée', 'Plat', 'Dessert'] %>
+        </div>
+
+        <%= f.submit "Générer les recettes" %>
+      <% end %>
+    </div>
+</div>

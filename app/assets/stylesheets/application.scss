@@ -10,6 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
+
 @import "components/navbar";
 @import "components/ingredient_card";
 
+@import "components/ingredient_form";
+@import "components/template";
