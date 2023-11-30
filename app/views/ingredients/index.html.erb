@@ -1,5 +1,6 @@
-<h1>Hello !!! PAGE DU FRIGO</h1>
-
-<% @ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
-<% end %>
+<h1>FRIGO</h1>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %> - <%= ingredient.quantity %> quantités - <%= ingredient.purchase_date %> </li>
+  <% end %>
+</ul>
