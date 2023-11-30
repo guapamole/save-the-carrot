@@ -11,7 +11,7 @@
 
 .footer {
   background-color: $orange;
-  height: 50px;
+  height: 60px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   position: fixed;
@@ -22,11 +22,12 @@
 }
 
 .content {
-  margin-top: 55px;
-  margin-bottom: 200px;
+  // margin-top: 55px;
+  // margin-bottom: 200px;
 }
 
 .icons-footer {
-  display: flex; /* Ou la largeur souhaitée */
+  display: flex;
+  justify-content: space-between; /* Ou la largeur souhaitée */
   height: auto;
 }

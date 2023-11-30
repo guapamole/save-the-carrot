@@ -6,7 +6,7 @@
   border-radius: 8px;
   border-radius: 8px;
   margin-bottom: 20px;
-  background-color: #f9f9f9;
+  background-color: #FBDDBA;
 }
 
 .img_layout {
@@ -14,6 +14,7 @@
   height: 86px;
   flex-shrink: 0;
   border-radius: 8px;
+  margin: 10px;
 }
 
 .title_row {
@@ -23,26 +24,43 @@
 }
 
 .plus_button {
-  width: 24px; /* Adjust the width and height of the button as needed */
-  height: 24px;
-  /* Add styles for positioning the button */
-  margin-top: -5px; /* Adjust the margin to align with the title */
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  padding: 0%;
+  border: none;
+  font-family: Manrope;
+  background-color: white;
+  margin-top: -5px;
 }
 
 .title_layout {
-
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-family: Manrope;
+  font-size: 22px;
+  margin-bottom: 4px;
 }
 
 .time_difficulty_layout {
   display: flex;
-  justify-content: space-between; /* Creates space between time and difficulty */
-  align-items: center; /* Aligns time and difficulty vertically */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .time_layout,
 .difficulty_layout {
-  font-size: 12px;
+  font-size: 16px;
+  font-family: Manrope;
+  padding: 0px;
+  margin-bottom: 3%;
   color: #555; /* Changed color for better readability */
+}
+
+h1 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  padding-left: 24px;
 }

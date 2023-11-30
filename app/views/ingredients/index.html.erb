@@ -1,15 +1,49 @@
-<h1>FRIGO</h1>
+
+<!--------
 <ul>
   <% @ingredients.each do |ingredient| %>
     <li><%= ingredient.name %> - <%= ingredient.quantity %> quantités - <%= ingredient.purchase_date %> </li>
   <% end %>
 </ul>
 
-<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
+ <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
+------>
+<div class="main-container mt-4">
+  <div> <h1 class="title">FRIGO</h1></div>
+  <div class="instruction ms-4"><p> Oh ! Votre frigo est bien rempli !</p></div>
+
+<div class="container">
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+      <div class="col-12 col-sm-6 col-md-4"> <!-- Utilisation de différentes tailles de colonnes pour différents écrans -->
+        <div class="card_design">
+
+          <div class="image">
+            <div class="img_layout"></div>
+          </div>
+
+          <div class="content row">
+          <%# <button class="btn-delete">s</button> %>
+          <p class="title_layout mt-1"><%= ingredient.name %></p>
+          <p class="time_layout">Acheté le <%= ingredient.purchase_date %> D A T E</p>
+          <%# ingredient.purchase_date - Date.now %>
+          <div class="d-flex align-items-center justify-content-center">
+            <button class="plus_button"> - </button>
+              <div><p class="quantity"><%= ingredient.quantity %> quantity </p></div>
+            <button class="plus_button"> + </button>
+          </div>
+        </div>
 
 
-<h1 class="title">Rendu front test</h1>
 
+      </div>
+    <% end %>
+  </div>
+</div>
+<div> <button class="main_btn"> Générer une recette </button> </div>
+</div>
+</div>
+<!----------
 <% @ingredients.each do |ingredient| %>
   <div class="container">
     <div class="ingredient_card">
@@ -27,4 +61,4 @@
 <button class="main_btn"> Générer une recette </button>
 <%# Intégrer lien vers filtres  %>
 
-<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
+<%# <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %> %>
