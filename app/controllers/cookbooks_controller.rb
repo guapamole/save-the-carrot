@@ -5,6 +5,14 @@ class CookbooksController < ApplicationController
   end
 
   def show
+    @cookbook = Cookbook.find(params[:id])
+    @recipes = @cookbook.recipes
+
+
+
+
+    # @ingredient = Ingredient.find(params[:ingredient_id])
+    # @recipe = Recipe.find(params[:recipe_id])
     #display a full recipe
   end
 end

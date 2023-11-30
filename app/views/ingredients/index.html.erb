@@ -4,3 +4,5 @@
     <li><%= ingredient.name %> - <%= ingredient.quantity %> quantités - <%= ingredient.purchase_date %> </li>
   <% end %>
 </ul>
+
+<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
