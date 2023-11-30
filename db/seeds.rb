@@ -13,8 +13,8 @@ User.destroy_all
 
 user = User.create(email: "savethecarotts@rabbit.com", password: "coucou")
 
-Ingredient.create(name: "carotte", user: user)
-Ingredient.create(name: "steack haché", user: user)
-Ingredient.create(name: "haricot vert", user: user)
-Ingredient.create(name: "choux fleur", user: user)
-Ingredient.create(name: "oeufs", user: user)
+Ingredient.create(name: "carotte", user: user, quantity: 2)
+Ingredient.create(name: "steack haché", user: user, quantity: 5)
+Ingredient.create(name: "haricot vert", user: user, quantity: 7)
+Ingredient.create(name: "choux fleur", user: user, quantity: 3)
+Ingredient.create(name: "oeufs", user: user, quantity: 9)
