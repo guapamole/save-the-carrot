@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Recipe.destroy_all
+Cookbook.destroy_all
 User.destroy_all
 
 user = User.create(email: "savethecarotts@rabbit.com", password: "coucou")
