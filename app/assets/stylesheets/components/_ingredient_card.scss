@@ -1,16 +1,20 @@
 
 .container {
   position: relative;
+  width: 100%;
+}
+
+
+.ingredient_card {
+  position: absolute;
   width: 150px;
- border: 1px solid #ccc; /* à enlever */
-  width: 150px;
+  border: 1px solid #ccc; /* à enlever */
   height: 200px;
-  flex-shrink: 0;
   border-radius: 16px;
  background-color : #FBDDBA;
 }
 
-.ingredient_card, .ingredient_pic {
+.ingredient_card .ingredient_pic {
   position: absolute;
   width: 123px;
   height: 100px;
@@ -18,7 +22,7 @@
 
 .ingredient_pic {
   background-color: white; /* Insérer image */
-  top: 19px;
+  top: 18px;
   left: 14px;
   border-radius: 8px;
 }
@@ -32,7 +36,7 @@
   font-weight: 800;
   line-height: normal;
   position: absolute;
-  top: 110px;
+  top: 122px;
   left: 14px;
   width: 123px;
 }
@@ -46,23 +50,24 @@
   font-weight: 400;
   line-height: normal;
   position: absolute;
-  top: 135px;
+  top: 140px;
   left: 14px;
   width: 123px;
 }
 
 .btn-delete {
 background-color: white;
+background-image: url('../../../assets/images/icons/poubelle.png');
+background-size: cover; /* Ajuste la taille de l'image à celle du bouton */
+background-position: center;
 width: 25px;
 height: 25px;
 flex-shrink: 0;
 border-radius: 25px;
-border: 1px solid #ccc; /* à enlever */
 top: 7px;
 left: 118px;
-background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
-background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
-background-repeat: no-repeat;
+padding: 0%;
+border: none;
 }
 
 .ingredient_pic, .btn-delete {
@@ -77,12 +82,10 @@ background-repeat: no-repeat;
 	border-radius: 25px;
 	bottom: 8px;
 	right: 20px;
-  background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
-  background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
-  background-repeat: no-repeat;
+  border: none;
 }
 
-.container, .btn-plus {
+.ingredient_card, .btn-plus {
 	position: absolute;
 }
 
@@ -94,12 +97,10 @@ background-repeat: no-repeat;
 	border-radius: 25px;
 	bottom: 8px;
 	left: 20px;
-  background-image: url('app/assets/images/icons/poubelle.png'); /* Remplacez 'chemin_vers_votre_image' par le chemin de votre image */
-  background-size: contain; /* Ajustez la taille de l'arrière-plan pour contenir l'image */
-  background-repeat: no-repeat;
+  border: none; 
 }
 
-.container, .btn-minus {
+.ingredient_card, .btn-minus {
 	position: absolute;
 }
 
@@ -111,23 +112,23 @@ background-repeat: no-repeat;
   font-weight: 800;
   line-height: normal;
 	position: absolute;
-	top: 155px;
+	top: 167px;
 	right: 69px;
 }
 
-.container, .btn-minus {
+.ingredient_card, .btn-minus {
 	position: absolute;
 }
 
 
-
 // HTML
-// <div class="container">
-// <div class="ingredient_card"></div>
-// <div class="ingredient_pic"></div>
-// <button class="btn-delete">s</button>
-// <p class="ingredient_name"> Pizza </p>
-// <p class="ingredient_description"> X jours de vie </p>
-// <button class="btn-plus"> + </button> <p class="quantity"> 1 </p><button class="btn-minus"> - </button>
 
+// <div class="container">
+//   <div class="ingredient_card">
+//     <div class="ingredient_pic"></div>
+//     <button class="btn-delete">s</button>
+//    <p class="ingredient_name"> Pizza </p>
+//    <p class="ingredient_description"> X jours de vie </p>
+//    <button class="btn-plus"> + </button> <p class="quantity"> 1 </p><button class="btn-minus"> - </button>
+//   </div>
 // </div>
