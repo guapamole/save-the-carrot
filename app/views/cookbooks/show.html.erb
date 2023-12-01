@@ -20,8 +20,9 @@
           </div>
 
           <div class="content row ingredient-infos">
-            <h2><%= recipe.name %></h2>
-
+            <%= link_to recipe_path(recipe) do %>
+              <h2><%= recipe.name %></h2>
+            <% end %>
 
             <% case recipe.difficulty %>
             <% when 1 %>
