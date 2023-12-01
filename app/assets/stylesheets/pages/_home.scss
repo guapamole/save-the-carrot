@@ -2,15 +2,17 @@
 
 
 body {
-  background-color: #F28E19;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
+  // background-color: #F28E19;
+  // min-height: 100vh;
+  // flex-direction: column;
+  // justify-content: space-evenly;
+  // margin: 0;
 }
 
 .titre {
-  height: 40%;
+  // height: 40%;
+  position: absolute;
+  top: 20px; 
 }
 
 #titre-hp {
@@ -29,7 +31,10 @@ body {
 }
 
 .logo {
-  text-align: center;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons-container {
@@ -39,6 +44,7 @@ body {
 
 .image-logo {
   width: 150px;
+  justify-content: center;
 }
 
 .btnlog {
@@ -60,13 +66,21 @@ body {
 
 .btn-log-out {
   text-decoration: none;
+  font-family: Manrope;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
+  // position: absolute;
+  bottom: 20px;
+  // left: 50%;
+  //transform: translateX(-50%);
+  // padding-bottom: 20px;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+
 }
 
 .btnmilieu {
@@ -75,4 +89,16 @@ body {
 
 .fixed-bottom {
   margin-bottom: 30px;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.session {
+  height: 100%;
 }
