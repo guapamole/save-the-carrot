@@ -3,7 +3,6 @@ require "nokogiri"
 
 class RecipesController < ApplicationController
   def index
-
     ingredients = params.dig(:choices, :ingredients).reject(&:empty?).map(&:to_i).map { |id| Ingredient.find(id).name }
     quantity = params.dig(:choices, :quantity)
     @meal_type = params.dig(:choices, :meal_type)
@@ -16,6 +15,7 @@ class RecipesController < ApplicationController
     @recipe.difficulty = params[:difficulty]
     @recipe.preptime = params[:preptime]
     @recipe.cookbook = current_user.cookbooks.first
+
     if @recipe.save
       redirect_to cookbook_path(current_user.cookbooks.first)
     end
@@ -23,6 +23,5 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-
   end
 end

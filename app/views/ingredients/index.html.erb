@@ -1,97 +1,63 @@
-
-<!--------
-<ul>
-  <% @ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %> - <%= ingredient.quantity %> quantités - <%= ingredient.purchase_date %> </li>
-  <% end %>
-</ul>
-
- <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
------->
 <div class="main-container mt-4">
-  <div class = "titre-carrotte-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %> <h1 class="title-frigo">FRIGO</h1>
+  <div class = "titre-carrotte-frigo">
+    <%= image_tag("logo.png", class: "petite-carrote") %>
+    <h1 class="title-frigo">FRIGO</h1>
   </div>
-  <div class="instruction ms-4"><p> Oh ! Votre frigo est bien rempli !</p></div>
 
-<div class="container">
-  <div class="row">
-    <% @ingredients.each do |ingredient| %>
-      <div class="col-12 col-sm-6 col-md-4"> <!-- Utilisation de différentes tailles de colonnes pour différents écrans -->
-        <div class="card_design">
-
-          <div class="image-plat">
-            <%= image_tag("plat.jpeg", class:"plat-image") %>
-            <%# <div class="img_layout"></div> %>
-          </div>
-
-          <div class="content row ingredient-infos">
-          <%# <button class="btn-delete">s</button> %>
-            <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
-            <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
-
-          <div class="d-flex align-items-center justify-content-start ">
-            <button class="plus_button"> - </button>
-              <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
-            <button class="plus_button"> + </button>
-          </div>
-
-        </div>
-
-
-
-      </div>
-    <% end %>
+  <div class="instruction ms-4">
+    <p> Oh ! Votre frigo est bien rempli !</p>
   </div>
-</div>
 
-<!-- Button trigger modal -->
-<button type="button" class="main-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Générer une recette
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-warning-subtle">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"> <strong> Mes filtres</strong></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="little-btn" data-bs-dismiss="modal">Fermer</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="button-create-recipe">
-  <%= link_to "Rajouter un produit", new_ingredient_path %>
-</div>
-
-</div>
-</div>
-
-
-<!----------
-<% @ingredients.each do |ingredient| %>
   <div class="container">
-    <div class="ingredient_card">
-    <div class="ingredient_pic"></div>
-    <button class="btn-delete">s</button>
-    <p class="ingredient_name"> <%= ingredient.name %> </p>
-    <p class="ingredient_description"> Acheté le <%= ingredient.purchase_date %> </p>
-    <%# ingredient.purchase_date - Date.now %>
-    <button class="btn-plus"> + </button> <p class="quantity"> <%= ingredient.quantity %> </p><button class="btn-minus"> - </button>
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+        <div class="col-12">
+          <div class="card_design px-2">
+            <div class="image-plat">
+              <%= image_tag("plat.jpeg", class:"plat-image") %>
+            </div>
+
+            <div class="content row ingredient-infos">
+              <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
+              <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-start ">
+              <button class="plus_button"> - </button>
+                <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
+              <button class="plus_button"> + </button>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 
-<% end %>
+  <!-- Button trigger modal -->
+  <button type="button" class="main-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Générer une recette
+  </button>
 
-<button class="main_btn"> Générer une recette </button>
-<%# Intégrer lien vers filtres  %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-warning-subtle">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> <strong> Mes filtres</strong></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="little-btn" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-create-recipe">
+    <%= link_to "Rajouter un produit", new_ingredient_path %>
+  </div>
+</div>

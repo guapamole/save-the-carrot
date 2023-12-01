@@ -6,7 +6,7 @@
 
       <div data-controller="quantity">
           <div class="quantity-input row align-items">
-              <%= f.input :Pour_qui_?, as: :numeric, class: "col" , input_html: { value: 1, data: { quantity_target: "nombre" } } %>
+              <%= f.input :quantity, as: :numeric, class: "col" , input_html: { value: 1, data: { quantity_target: "nombre" } }, label: "On est combien ?" %>
             <div class="qty_button">
               <button class="title_button col-1" type="button" data-action="click->quantity#decrement">-</button>
               <button class="title_button col-1" type="button" data-action="click->quantity#increment">+</button>
@@ -14,18 +14,15 @@
           </div>
 
         <div>
-          <%= f.input :Quel_type_de_plat_?, collection: ['Entrée', 'Plat', 'Dessert'] %>
+          <%= f.input :meal_type, collection: ['Entrée', 'Plat', 'Dessert'], label: "Type de repas" %>
         </div>
 
         <div class="display-ingredient-checkboxes">
-        <%= f.input :ingrédients, collection: current_user.ingredients, as: :check_boxes %>
+        <%= f.input :ingredients, collection: current_user.ingredients, as: :check_boxes, label: "Qui on sauve ?" %>
         </div>
 
 
         </div>
-
-
-
 
 
 
