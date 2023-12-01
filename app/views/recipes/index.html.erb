@@ -18,10 +18,10 @@
             </div>
 
             <div class="content row ingredient-infos">
-              <h3 class="title_layout" id="number-quantity2"><%= recipe["name"] %></h3>
-              <p>Difficulté: <%= recipe["difficulty"] %></p>
-              <p>Temps de préparation: <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> minutes</p>
-              <%= link_to "enregistrer", recipes_path(@recipe, recipe), data: {turbo_method: :post} %>
+              <h3 class="title_layout_recipes mb-0" id="number-quantity2"><%= recipe["name"] %></h3>
+              <p class= "mb-0">Difficulté: <%= recipe["difficulty"] %></p>
+              <p class= "mb-0">Préparation: <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> minutes</p>
+              <%= link_to "+", recipes_path(@recipe, recipe), data: {turbo_method: :post}, class:"plus_recipes_card mb-0" %>
             </div>
           </div>
         </div>
