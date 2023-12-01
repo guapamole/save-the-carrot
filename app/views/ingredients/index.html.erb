@@ -9,7 +9,8 @@
  <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
 ------>
 <div class="main-container mt-4">
-  <div class = "titre-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %> <h1 class="title-frigo">FRIGO</h1></div>
+  <div class = "titre-carrotte-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %> <h1 class="title-frigo">FRIGO</h1>
+  </div>
   <div class="instruction ms-4"><p> Oh ! Votre frigo est bien rempli !</p></div>
 
 <div class="container">
@@ -23,12 +24,12 @@
             <%# <div class="img_layout"></div> %>
           </div>
 
-          <div class="content row">
+          <div class="content row ingredient-infos">
           <%# <button class="btn-delete">s</button> %>
-          <p class="title_layout" id="number-quantity2"><%= ingredient.name %></p>
-          <p class="time_layout">Acheté le : <%= ingredient.purchase_date %> D A T E</p>
-          <%# ingredient.purchase_date - Date.now %>
-          <div class="d-flex align-items-center justify-content-start">
+            <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
+            <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+
+          <div class="d-flex align-items-center justify-content-start ">
             <button class="plus_button"> - </button>
               <p id="number-quantity"><%= ingredient.quantity %></p>
             <button class="plus_button"> + </button>
@@ -42,9 +43,19 @@
     <% end %>
   </div>
 </div>
-<div> <button class="main_btn"> Générer une recette </button> </div>
+
+<div class="button-create-recipe">
+  <button class="main_btn"> Générer une recette </button>
+</div>
+
+<div class="button-create-recipe">
+  <%# <button class="main_btn"> Rajouter un produit </button> %>
+  <%= link_to "Rajouter un produit", new_ingredient_path %>
+</div>
+
 </div>
 </div>
+<%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
 <!----------
 <% @ingredients.each do |ingredient| %>
   <div class="container">
@@ -62,5 +73,3 @@
 
 <button class="main_btn"> Générer une recette </button>
 <%# Intégrer lien vers filtres  %>
-
-<%# <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %> %>
