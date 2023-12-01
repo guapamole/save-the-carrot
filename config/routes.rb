@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
 
   resources :ingredients, only: [:index, :new, :create, :edit, :update] do
-    get 'add_an_image', on: :collection
+    get "add_an_image", on: :collection
+    post "analyse_image", on: :collection
   end
+
 
   resources :cookbooks, only: [:show] do
     resources :recipes, only: [:new, :create]

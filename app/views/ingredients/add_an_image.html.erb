@@ -1,6 +1,6 @@
-<%= form_with(model: @ingredient, url: ingredients_path, method: :post, html: { multipart: true, id: 'ingredient-form' }) do |form| %>
+<%= form_with(model: @ingredient, url: analyse_image_ingredients_path, method: :post, html: { multipart: true, id: 'ingredient-form' }) do |form| %>
   <%= form.label :photo, "Télécharger une photo (JPG/JPEG)" %>
   <%= form.file_field :photo %>
 
-  <%= form.submit "Analyse de la photo", id: 'submit-button' %>
+  <%= form.submit "Récupérer mes ingrédients", id: 'submit-button' %>
 <% end %>

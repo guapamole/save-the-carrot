@@ -1,6 +1,3 @@
-require "open-uri"
-require "nokogiri"
-
 class IngredientsController < ApplicationController
   before_action :find_ingredient, only: [:show, :edit, :update]
 
@@ -18,10 +15,11 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = current_user.ingredients.build(ingredient_params)
-    if @ingredient.save
-      redirect_to_ingredient(@ingredient, "Ingrédient ajouté avec succès.")
+
+    if save_and_analyze_image
+      redirect_to_ingredient(@ingredient)
     else
-      render :new, alert: "Problème lors de l'ajout de l'ingrédient."
+      render :new
     end
   end
 
@@ -30,9 +28,9 @@ class IngredientsController < ApplicationController
 
   def update
     if @ingredient.update(ingredient_params)
-      redirect_to_ingredient(@ingredient, "Ingrédient mis à jour avec succès.")
+      redirect_to_ingredient(@ingredient)
     else
-      render :edit, alert: "Problème lors de la mise à jour de l'ingrédient."
+      render :edit
     end
   end
 
@@ -40,26 +38,17 @@ class IngredientsController < ApplicationController
     ingredients_param = params.dig(:choices, :ingredients)
 
     if ingredients_param.present?
-        ingredient_names = ingredients_param.map { |id| Ingredient.find(id)&.name }
-        @ingredient = ImageDetections.new(current_user, ingredient_names.compact).generate(with_images: true)
+      ingredient_names = ingredients_param.map { |id| Ingredient.find_by(id: id)&.name }
     end
   end
 
-  def create_with_image
-    @ingredient = current_user.ingredients.build(ingredient_params)
-    if @ingredient.save
-      if params[:ingredient][:photo].present?
-        @ingredient.photo.attach(params[:ingredient][:photo])
-      end
+  def analyse_image
+    img = params.dig(:photo).tempfile
+    response = Cloudinary::Uploader.upload(img)
+    url = response["secure_url"]
 
-      @recipes = ImageDetections.new(current_user, [@ingredient]).generate(with_images: true)
-
-      redirect_to_ingredient(@ingredient, "Ingrédient ajouté avec succès.")
-    else
-      render :new, alert: "Problème lors de l'ajout de l'ingrédient."
-    end
+    ImageDetection.new(current_user, url).generate
   end
-
 
   private
 
@@ -71,7 +60,15 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find_by(id: params[:id])
   end
 
-  def redirect_to_ingredient(ingredient, notice_message)
-    redirect_to ingredient_path(ingredient), notice: notice_message
+  def redirect_to_ingredient(ingredient)
+    redirect_to ingredients_path(ingredient)
+
   end
 end
+
+
+# {
+#   indredients: {
+#     eggs: 2,
+#     tomatoes: 3
+#   }}
