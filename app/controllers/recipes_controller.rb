@@ -20,4 +20,8 @@ class RecipesController < ApplicationController
       redirect_to cookbook_path(current_user.cookbooks.first)
     end
   end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
 end
