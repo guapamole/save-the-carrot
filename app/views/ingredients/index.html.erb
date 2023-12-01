@@ -11,22 +11,22 @@
   <div class="container">
     <div class="row">
       <% @ingredients.each do |ingredient| %>
-        <div class="col-12">
-          <div class="card_design px-2">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card_design">
             <div class="image-plat">
               <%= image_tag("plat.jpeg", class:"plat-image") %>
             </div>
 
-            <div class="content row ingredient-infos">
+            <div class="content row ingredient-infos mx-0">
               <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
               <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+              <div class="d-flex align-items-center justify-content-start ">
+                <button class="plus_button"> - </button>
+                  <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
+                <button class="plus_button"> + </button>
+              </div>
             </div>
 
-            <div class="d-flex align-items-center justify-content-start ">
-              <button class="plus_button"> - </button>
-                <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
-              <button class="plus_button"> + </button>
-            </div>
           </div>
         </div>
       <% end %>
