@@ -7,8 +7,7 @@ class CookbooksController < ApplicationController
   def show
     @cookbook = Cookbook.find(params[:id])
     @recipes = @cookbook.recipes
-
-
+  end
 
     # @ingredient = Ingredient.find(params[:ingredient_id])
     # @recipe = Recipe.find(params[:recipe_id])

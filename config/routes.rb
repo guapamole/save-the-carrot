@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     post "analyse_image", on: :collection
   end
 
-
   resources :cookbooks, only: [:show] do
     resources :recipes, only: [:new, :create]
   end
