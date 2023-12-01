@@ -11,26 +11,21 @@
   <div class="container">
     <div class="row">
       <% @recipes["recipes"].each do |recipe| %>
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card_design">
-        
-          <div class="image-plat">
-            <img class="img_layout" src="<%= recipe['img'] %>" alt="" width="256">
-          </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card_design px-2">
+            <div class="image-plat">
+              <%= image_tag(recipe["img"], class: "plat-image") %>
+            </div>
 
-          <div class="content row ingredient-infos">
-            <h2 class="title_layout" id="number-quantity2"><%= recipe["name"] %></h2>
-            <h3 class="time_layout">Temps de preparation : <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> minutes</h3>
-            <h3 class="time_layout">Dificulté : <%= recipe["difficulty"] %></h3>
-            <%= link_to "enregistrer", recipes_path(@recipe, recipe), data: {turbo_method: :post} %>
+            <div class="content row ingredient-infos">
+              <h3 class="title_layout" id="number-quantity2"><%= recipe["name"] %></h3>
+              <p>Difficulté: <%= recipe["difficulty"] %></p>
+              <p>Temps de préparation: <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> minutes</p>
+              <%= link_to "enregistrer", recipes_path(@recipe, recipe), data: {turbo_method: :post} %>
+            </div>
           </div>
-
         </div>
-      </div>
       <% end %>
     </div>
   </div>
-
-
-
 </div>

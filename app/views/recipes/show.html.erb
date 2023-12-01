@@ -1,2 +1,12 @@
-<h2><%= @recipe.name %></h2>
-<p><%= @recipe.content %></p>
+
+<style>
+* {
+  background-color : #F28E19
+}
+</style>
+<div class="image-recipe">
+  <%= image_tag("plat.jpeg", class:"plat-image")%>
+</div>
+
+  <h2><%= @recipe.name %></h2>
+  <p><%= @recipe.content %></p>
