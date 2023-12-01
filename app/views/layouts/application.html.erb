@@ -22,7 +22,7 @@
 
     <%= yield %>
 
-  <% unless current_page?(root_path new_user_session_path) %>
+  <% unless current_page?(root_path) %>
     <%= render "shared/footer" %>
   <% end %>
 

@@ -1,0 +1,69 @@
+
+
+<%# ---------------------Recipe---------------------------- %>
+<% @recipes["recipes"].each do |recipe| %>
+  <div class="card_design">
+    <div class="row">
+      <div class="col-3">
+        <img class="img_layout" src="<%= recipe['img'] %>" alt="" width="256">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9">
+          <div class="title_row">
+            <h3 class="title_layout"><%= recipe["name"] %></h3>
+            <%#= link_to , class: "plus_button" do %>
+              <img src="app/assets/images/icons/button-plus.png" alt="plus button">
+
+            <%# end %>
+        </div>
+          <p class="time_difficulty_layout">
+            <span class="time_layout">Time: <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i %> min</span>
+            <span class="difficulty_layout">Difficulty: <%= recipe["difficulty"] %></span>
+            <%= link_to "enregistrer", recipes_path(@recipe, recipe), data: {turbo_method: :post} %>
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<%# ------------------------------ingredients------------------------------------ %>
+<div class="main-container mt-4">
+  <div class = "titre-carrotte-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %> <h1 class="title-frigo">FRIGO</h1>
+  </div>
+  <div class="instruction ms-4"><p> Oh ! Votre frigo est bien rempli !</p></div>
+
+<div class="container">
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+      <div class="col-12 col-sm-6 col-md-4"> <!-- Utilisation de différentes tailles de colonnes pour différents écrans -->
+        <div class="card_design">
+
+          <div class="image-plat">
+            <%= image_tag("plat.jpeg", class:"plat-image") %>
+            <%# <div class="img_layout"></div> %>
+          </div>
+
+          <div class="content row ingredient-infos">
+          <%# <button class="btn-delete">s</button> %>
+            <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
+            <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+
+          <div class="d-flex align-items-center justify-content-start ">
+            <button class="plus_button"> - </button>
+              <p id="number-quantity"><%= ingredient.quantity %></p>
+            <button class="plus_button"> + </button>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    <% end %>
+  </div>
+</div>

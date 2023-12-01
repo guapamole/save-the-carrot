@@ -1,3 +1,15 @@
+.card_design {
+  display: flex;
+  width: 339px;
+  height: 104px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #FBDDBA;
+
+}
+
 
 .container {
   position: relative;
@@ -97,7 +109,7 @@ border: none;
 	border-radius: 25px;
 	bottom: 8px;
 	left: 20px;
-  border: none; 
+  border: none;
 }
 
 .ingredient_card, .btn-minus {
@@ -112,14 +124,63 @@ border: none;
   font-weight: 800;
   line-height: normal;
 	position: absolute;
-	top: 167px;
-	right: 69px;
+	// top: 167px;
+	// right: 69px;
 }
 
 .ingredient_card, .btn-minus {
 	position: absolute;
 }
 
+.image-plat {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.plat-image {
+  width: 100%; /* Pour occuper la largeur totale du conteneur */
+  // height: auto; /* Pour maintenir le rapport hauteur/largeur et éviter la distorsion */
+  // display: block;
+}
+
+
+.plus_button {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  padding: 0%;
+  border: none;
+  font-family: Manrope;
+  background-color: white;
+  // margin-top: -5px;
+}
+
+.ingredient-infos h2 {
+  font-weight: bold;
+
+}
+
+.ingredient-infos h3 {
+  font-size: 18px;
+}
+
+.ingredient-infos {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+}
+
+#number-quantity {
+  margin-left: 7px;
+  margin-right: 7px;
+
+}
 
 // HTML
 
