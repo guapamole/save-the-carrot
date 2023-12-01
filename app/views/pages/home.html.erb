@@ -4,36 +4,47 @@
 <style>
 body {
   background-color: #F28E19;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 </style>
 <%# FIN STYLE--------------------------------------------- %>
+<div class="main-container row">
 
-<div class="titre">
-<h1 id="titre-hp">Save the carrot</h1>
-</div>
 
-<div class="logo">
-<%= link_to ingredients_path do %>
-  <%= image_tag("logo.png", class: "image-logo") %>
-<% end %>
-</div>
-
-<% unless user_signed_in? %>
-  <div class="fixed-bottom">
-  <div class="btnmilieu">
-    <div class="buttons-container">
-      <%= link_to "S'inscrire",  new_user_session_path, class:"btnlog" %>
-      <%# <button class="btn-log">S'inscrire</button> %>
+    <div class="titre">
+    <h1 id="titre-hp">Save the carrot</h1>
     </div>
+
+    <div class="logo">
+    <%= link_to ingredients_path do %>
+      <%= image_tag("logo.png", class: "image-logo") %>
+    <% end %>
+    </div>
+
+  <div class="session">
+    <% unless user_signed_in? %>
+      <div class="fixed-bottom">
+      <div class="btnmilieu">
+        <div class="buttons-container">
+          <%= link_to "S'inscrire",  new_user_session_path, class:"btnlog" %>
+          <%# <button class="btn-log">S'inscrire</button> %>
+        </div>
+      </div>
+
+        <div class="buttons-container">
+            <%= link_to "Me connecter",  user_session_path, class:"btnlog" %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <% if user_signed_in? %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
+    <% end %>
   </div>
 
-    <div class="buttons-container">
-        <%= link_to "Me connecter",  user_session_path, class:"btnlog" %>
-    </div>
-  </div>
-<% end %>
 
-
-<% if user_signed_in? %>
-  <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
-<% end %>
+</div>
