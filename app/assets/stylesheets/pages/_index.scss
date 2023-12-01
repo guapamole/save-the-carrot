@@ -94,3 +94,46 @@
 //   margin-right: 5px;
 //   margin-bottom: 5px;
 // }
+
+
+.modal-content {
+  background-color: #FBDDBA;
+  border-radius: 10px;
+  border: solid #F28E19;
+}
+
+
+.modal-title h1 {
+  color: #000;
+  font-family: Manrope;
+  font-size: 15px;
+  font-style: bold;
+  font-weight: 100;
+
+}
+
+
+.filter-content {
+  color: #000;
+  font-family: Manrope;
+  font-size: 15px;
+
+}
+
+.qty_button {
+
+  display: flex;
+  justify-content: space-around;
+
+  // margin-top: -5px;
+}
+
+.title_button {
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+  font-family: Manrope;
+  border-radius: 25px;
+  border: none;
+  margin-bottom: 10px;
+}
