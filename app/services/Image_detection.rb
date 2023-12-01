@@ -1,4 +1,4 @@
-class ImageDetections
+class ImageDetection
   include HTTParty
   base_uri 'https://chooch-api.com'
 
