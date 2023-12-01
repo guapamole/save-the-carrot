@@ -1,6 +1,77 @@
-<% @recipes.each do |recipe| %>
-  <%= recipe.name %>
-  <%= recipe.difficulty %>
-  <%= recipe.cooking_time %>
-  <%= recipe.meal_type %>
-<% end %>
+<div class="main-container mt-4">
+  <div class = "titre-carrotte-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %>
+    <h1 class="title-frigo">MON COOKBOOK</h1>
+  </div>
+
+  <div class="instruction ms-4">
+    <p> Ici vos recettes fovorites... cliquez pour voir les details </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <% @recipes.each do |recipe| %>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card_design">
+
+          <div class="image-plat">
+              <%= image_tag("plat.jpeg", class:"plat-image") %>
+          </div>
+
+          <div class="content row ingredient-infos">
+            <h2><%= recipe.name %></h2>
+
+        
+            <% case recipe.difficulty %>
+            <% when 1 %>
+            <div class="div">
+              <%= image_tag("star.png", class:"etoile") %>
+            </div>
+
+            <% when 2 %>
+            <div class="div">
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+            </div>
+
+            <% when 3 %>
+            <div class="div">
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+            </div>
+
+            <% when 4 %>
+            <div class="div">
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+            </div>
+
+            <% when 5 %>
+            <div class="div">
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+              <%= image_tag("star.png", class:"etoile") %>
+            </div>
+
+            <% else %>
+              <p>Dificulté inconnue</p>
+            <% end %>
+
+
+            <h3><i class="fa-solid fa-clock"></i><%= recipe.preptime.hour  %></h3>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
