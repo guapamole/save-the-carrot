@@ -1,11 +1,15 @@
 <div class="main-container mt-4">
-  <div class = "titre-carrotte-frigo"> <%= image_tag("logo.png", class:"petite-carrote") %>
-    <h1 class="title-frigo">MON COOKBOOK</h1>
+    <div class="header-titre-subtitre">
+    <div class = "titre-carrotte-frigo">
+      <%= image_tag("logo.png", class: "petite-carrote") %>
+      <h1 class="title-frigo">MES RECETTES</h1>
+    </div>
+
+    <div class="instruction">
+      <p class="mb-3">Ici vos recettes favorites... cliquez pour voir les details</p>
+    </div>
   </div>
 
-  <div class="instruction ms-4">
-    <p> Ici vos recettes favorites... cliquez pour voir les details </p>
-  </div>
 
   <div class="container">
     <div class="row">
@@ -66,7 +70,12 @@
               <% end %>
             </div>
 
-            <h3 class="mb-0 pt-3"><i class="fa-solid fa-clock"></i><%= recipe.preptime.hour unless recipe.preptime.nil?  %> minutes</h3>
+            <h3 class="mb-0"><i class="fa-solid fa-clock"></i><%= recipe.preptime.hour unless recipe.preptime.nil?  %>
+            minutes</h3>
+          </div>
+
+          <div class="destroy">
+            <%= link_to "", recipe_path(recipe), data: {turbo_method: :delete, turbo_confirm: "Sur de vouloir supprimer cette recette ?"}, class:"fa-solid fa-trash-can poubelle" %>
           </div>
 
         </div>
@@ -77,3 +86,4 @@
     </div>
   </div>
 </div>
+

@@ -1,12 +1,53 @@
 
 <style>
-* {
+body {
   background-color : #F28E19
 }
 </style>
-<div class="image-recipe">
-  <%= image_tag("plat.jpeg", class:"plat-image")%>
+
+<div class="container">
+  <div class="row">
+    <div class="col mt-4 bloc-quick-infos">
+      <div class="image-recipe">
+        <%= image_tag("plat.jpeg", class:"image-recette")%>
+      </div>
+
+      <div class="quick-infos">
+        <div class="preparation-card">
+          <p>Preparatio</p>
+        </div>
+
+        <div class="cuisson-card">
+          <p>Cuisson</p>
+        </div>
+
+        <div class="difficulte-card">
+          <p>Difficulté</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-  <h2><%= @recipe.name %></h2>
-  <p><%= @recipe.content %></p>
+
+
+<div class="card-details-recette">
+
+  <div class="titre-details-recette text-center">
+    <h2 id="titre-details-recette-id"><%= @recipe.name %></h2>
+  </div>
+
+  <div class="sub-titre-details-recette">
+    <h3 class="mb-0">Ingredients</h3>
+  </div>
+  holaaaaaaaaa zefer gf
+  <div class="sub-titre-details-recette mb-0">
+    <h3 class="mb-0">Instructions</h3>
+  </div>
+    <p><%= @recipe.content %></p>
+
+  <div class="div-recipe-done">
+    <button class="button-recipe-done">Recette realisée</button>
+  </div>
+
+</div>

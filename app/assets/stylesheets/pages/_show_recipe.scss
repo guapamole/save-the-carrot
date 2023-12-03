@@ -1,3 +1,80 @@
 .image-recipe {
   width: 20px;
 }
+
+.card-details-recette {
+  background-color: white;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  position: fixed;
+  bottom: 0;
+  height: 75%;
+  width: -webkit-fill-available;
+  padding: 10px;
+
+}
+
+
+#titre-details-recette-id {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.sub-titre-details-recette {
+  color: white;
+  background-color: #F28E19;
+  border-radius: 50px;
+  padding: 4px;
+  text-align: center;
+  width: 45%;
+  font-size: 20px;
+}
+
+.button-recipe-done {
+ /* Cenre le contenu verticalement */
+  color: white;
+  background-color: #F28E19;
+  border-radius: 50px;
+  padding: 4px;
+  text-align: center;
+  width: 45%;
+  border: none;
+  font-size: 20px;
+}
+
+.div-recipe-done {
+  width: 100%;
+  display: flex; /* Utilisez un modèle de boîte flexible pour centrer le contenu */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center;
+  font-size: 15px;
+}
+
+.image-recipe{
+  width:150px;
+  border-radius: 30px;
+}
+
+.bloc-quick-infos {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.quick-infos {
+  width: 35%;
+}
+
+.preparation-card, .cuisson-card, .difficulte-card {
+  background-color: #FBDDBA;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.image-recette {
+  border-radius: 10px;
+  width: 150px;
+}

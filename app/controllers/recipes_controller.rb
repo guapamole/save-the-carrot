@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
     @recipe.name = params[:name]
     @recipe.difficulty = params[:difficulty]
     @recipe.preptime = params[:preptime]
+    @recipe.image = params[:with_images]
     @recipe.cookbook = current_user.cookbooks.first
 
     if @recipe.save
@@ -24,4 +25,11 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
   end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to cookbook_path(current_user)
+  end
+
 end
