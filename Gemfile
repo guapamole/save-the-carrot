@@ -12,7 +12,9 @@ gem "cloudinary"
 gem "ruby-openai"
 gem "open-uri"
 gem "httparty"
-gem "sidekiq", "6.5"
+
+gem "sidekiq", "< 7"
+
 gem "sidekiq-failures", "~> 1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

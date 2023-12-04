@@ -46,21 +46,10 @@ class IngredientsController < ApplicationController
     img = params.dig(:photo).tempfile
     url = Cloudinary::Uploader.upload(img)["secure_url"]
     ImageDetectionJob.perform_later(current_user, url)
-    redirect_to results_path
+    redirect_to ingredients_results_path
   end
 
-
-  def create_from_photo
-    details = analyze_image
-    raise
-    # @ingredient.new
-    # ingredient.name = details[:name]
-
-    if @ingredient.save
-      redirect_to_ingredient(@ingredient)
-    else
-      render :new
-    end
+  def results
   end
 
   private

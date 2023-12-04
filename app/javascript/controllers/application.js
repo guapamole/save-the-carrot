@@ -1,25 +1,25 @@
-import { Application } from "@hotwired/stimulus"
+import { Application } from '@hotwired/stimulus';
 
-const application = Application.start()
+const application = Application.start();
 
 // Configure Stimulus development experience+
-application.debug = false
-window.Stimulus   = application
+application.debug = false;
+window.Stimulus = application;
 
-export { application }
+export { application };
 
-document.addEventListener("DOMContentLoaded", function() {
-  var quantityField = document.querySelector(".ingredient-quantity");
-  var decrementButton = document.querySelector(".quantity-decrement");
-  var incrementButton = document.querySelector(".quantity-increment");
+// document.addEventListener("DOMContentLoaded", function() {
+//   var quantityField = document.querySelector(".ingredient-quantity");
+//   var decrementButton = document.querySelector(".quantity-decrement");
+//   var incrementButton = document.querySelector(".quantity-increment");
 
-  decrementButton.addEventListener("click", function() {
-    if (quantityField.value > 0) {
-      quantityField.stepDown();
-    }
-  });
+//   decrementButton.addEventListener("click", function() {
+//     if (quantityField.value > 0) {
+//       quantityField.stepDown();
+//     }
+//   });
 
-  incrementButton.addEventListener("click", function() {
-    quantityField.stepUp();
-  });
-});
+//   incrementButton.addEventListener("click", function() {
+//     quantityField.stepUp();
+//   });
+// });
