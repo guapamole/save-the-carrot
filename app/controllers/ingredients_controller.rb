@@ -44,22 +44,15 @@ class IngredientsController < ApplicationController
 
   def analyze_image
     img = params.dig(:photo).tempfile
-
-    File.open(img.path) do |file|
-      @ingredient = Ingredient.new
-      @ingredient.photo.attach(io: file, filename: 'analyzed_image.jpg', content_type: 'image/jpeg')
-    end
-
     url = Cloudinary::Uploader.upload(img)["secure_url"]
-
-    ImageDetection.new(current_user, url).generate
+    ImageDetectionJob.perform_later(current_user, url)
+    redirect_to results_path
   end
 
 
   def create_from_photo
     details = analyze_image
     raise
-
     # @ingredient.new
     # ingredient.name = details[:name]
 
