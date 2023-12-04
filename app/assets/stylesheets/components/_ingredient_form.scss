@@ -1,7 +1,5 @@
 .form-title {
   color: #000;
-  margin-left: 30px;
-  padding-top: 150px;
   font-family: Manrope;
   font-size: 30px;
   font-style: normal;
@@ -52,7 +50,7 @@
   padding-top: 30px;
   text-align: left;
   font-family: Manrope;
-  font-size: 25px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -142,6 +140,8 @@
 .ingredient-date {
   border: none;
   margin-top: 10px;
+  padding-right: 30px;
+  margin-left: 10px;
   width: 175px;
   height: 75px;
   border-radius: 16px;
@@ -156,20 +156,43 @@
 }
 
 .submit-button {
-  text-decoration: none;
-  color: white;
-  border-radius: 30px;
-  background-color: #F28E19;
-  border: none;
+  flex-shrink: 0;
+  background-color: rgba(251, 221, 186, 0.95);
   font-family: Manrope;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 800;
-  align-items: center;
-  text-align: center;
-  margin: 10px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 90px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 90px;
+  width: 280px; /* Ajustez la largeur souhaitée */
+  display: inline-block; /* Pour permettre le réglage de la largeur */
+  text-align: center; /* Pour centrer le texte horizontalement */
+  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+  margin: 0 5px;
+  height: 75px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-#submit-button {
-  text-decoration: none;
+.add-btn {
+  margin-top: 30px;
+}
+
+.loader-overlay {
+  background-color: white;
+  top: 0px;
+  position: absolute;
+  z-index: 1500;
+  width: 110vw;
+  height: 105vh;
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
 }

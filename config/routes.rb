@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
   resources :ingredients, only: [:index, :new, :create, :edit, :update] do
     get "add_an_image", on: :collection
-    post "analyse_image", on: :collection
+    post "analyze_image", on: :collection
   end
 
+  get "/ingredients_results", to: "ingredients#results"
 
-  resources :cookbooks, only: [:show] do
+  resources :cookbooks, only: [:show, :destroy] do
     resources :recipes, only: [:new, :create]
   end
 

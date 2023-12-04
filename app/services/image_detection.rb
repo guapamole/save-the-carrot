@@ -7,13 +7,16 @@ class ImageDetection
 
   def generate(options = {})
     response = @client.chat(
-    parameters: {
-      model: "gpt-4-vision-preview",
-      messages: [{ role: "user", content: payload}],
-      max_tokens: 500,
-    }
-  )
-    debugger
+      parameters: {
+        model: "gpt-4-vision-preview",
+        messages: [{ role: "user", content: payload}],
+        max_tokens: 500,
+      }
+    )
+
+    return response.dig("choices", 0, "message", "content")
+                   .scan(/\{'type': '.+', 'name': '.+'}/)
+                   .map { |item| JSON.parse(item.gsub("'", '"')) }
   end
 
   private
@@ -37,12 +40,5 @@ class ImageDetection
       {'type': 'vegetable', 'name': 'cucumber'},
       {'type': 'beverage', 'name': 'carrot juice'},
     ]"
-  end
-
-  def result
-    data = response.dig("choices", 0, "message", "content")
-      .scan(/\{'type': '.+', 'name': '.+'}/)
-      .map { |item| JSON.parse(item.gsub("'", '"')) }
-    p data
   end
 end

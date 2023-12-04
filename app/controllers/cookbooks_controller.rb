@@ -7,17 +7,14 @@ class CookbooksController < ApplicationController
   def show
     @cookbook = Cookbook.find(params[:id])
     @recipes = @cookbook.recipes
-  
+  end
 
-
-    def destroy
-      # @co.destroy
-      # redirect_to cookbook_path(current_user)
-    end
-
+  def destroy
+    @co.destroy
+    redirect_to cookbook_path(current_user)
+  end
 
     # @ingredient = Ingredient.find(params[:ingredient_id])
     # @recipe = Recipe.find(params[:recipe_id])
     #display a full recipe
-  end
 end

@@ -4,6 +4,9 @@ class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.all
     @recipe = Recipe.new
+    if params[:query].present?
+      @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -16,7 +19,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = current_user.ingredients.build(ingredient_params)
 
-    if save_and_analyze_image
+    if @ingredient.save
       redirect_to_ingredient(@ingredient)
     else
       render :new
@@ -42,12 +45,15 @@ class IngredientsController < ApplicationController
     end
   end
 
-  def analyse_image
+  def analyze_image
     img = params.dig(:photo).tempfile
-    response = Cloudinary::Uploader.upload(img)
-    url = response["secure_url"]
+    url = Cloudinary::Uploader.upload(img)["secure_url"]
+    ImageDetectionJob.perform_later(current_user, url)
+    redirect_to ingredients_results_path
+  end
 
-    ImageDetection.new(current_user, url).generate
+  def results
+    
   end
 
   private
@@ -62,13 +68,5 @@ class IngredientsController < ApplicationController
 
   def redirect_to_ingredient(ingredient)
     redirect_to ingredients_path(ingredient)
-
   end
 end
-
-
-# {
-#   indredients: {
-#     eggs: 2,
-#     tomatoes: 3
-#   }}
