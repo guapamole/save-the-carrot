@@ -1,4 +1,8 @@
-<h1 class="form-title"> Nouvel Ingrédient </h1>
+
+    <div class = "titre-carrotte-frigo mt-4 ms-4">
+      <%= image_tag("logo.png", class: "petite-carrote") %>
+      <h1 class="form-title ms-1"> NOUVEL INGREDIENT </h1>
+    </div>
 
 <div class="ingredient-form">
   <%= form_for @ingredient, url: ingredients_path do |f| %>
@@ -21,8 +25,8 @@
     <div class="date-controls">
     <%= f.date_field :purchase_date, class: "ingredient-date" %>
     </div>
-  <div class="submit-button">
-    <%= f.submit "Ajouter Ingrédient" %>
+  <div class="add-btn">
+    <%= f.submit "Ajouter Ingrédient", class: "submit-button" %>
   </div>
   <% end %>
 </div>

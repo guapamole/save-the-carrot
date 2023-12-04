@@ -19,7 +19,7 @@
     </button>
 
     <div class="button-create-recipe ms-1">
-      <%= link_to "Rajouter un produit", new_ingredient_path, id:"boutons-frigo2"%>
+      <%= link_to "Ajouter un produit", new_ingredient_path, id:"boutons-frigo2"%>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
 
             <div class="content row ingredient-infos mx-0">
               <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
-              <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+              <h3 class="time_layout">Ajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
               <div class="d-flex align-items-center justify-content-start ">
                 <button class="plus_button"> - </button>
                   <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
