@@ -1,28 +1,42 @@
-<h1 class="form-title"> Nouvel Ingrédient </h1>
 
-<div class="ingredient-form">
-  <%= form_for @ingredient, url: ingredients_path do |f| %>
-    <%= f.label :name, "Nom :", class: "name-label" %>
-    <%= f.text_field :name, class: "ingredient-name", placeholder: "Ex: Kiri, carotte, etc." %>
-
-    <%= f.label :quantity, "Quantité :", class: "quantity-label" %>
-    <div class="quantity-controls">
-      <button type="button" class="quantity-decrement">
-        <img src="https://s3-alpha-sig.figma.com/img/af4a/b86d/d0ca102fd68177fa88ff7d6b2811596f?Expires=1702252800&Signature=lGAH5nDbRw6KzMaPRz3bmbA9ybvtQjJYO39HXykEuu22npXdnEdyGT1UZ0QAVEmlejRSgrrlSUzEnmdK~gtaBqs4rB12uPXzSU7GMpMQfwxQZj6De0ZpNNHSkNh2n8~QiIUG8zY46fzb8VyYE5FoWCbJNpaefbywsM0eTg79bAN0~VKRyvJHa0Z~ZwZ6S4sGz12TGt9WA4INYdSuAYMGTBUDqK8JxkzP-yscOPv5fTr0qjFvjpg4X3D9ySXFAE-Re4cbQECi4xmulSxNURK2wD7ojrSxwPJO-CmVMlVfnzh9IllQVDfRmkXx7SDtd-sgLSRzrIgvN9GbZf0TSmDaAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Incrementer" style="width: 20px; height: 20px; flex-shrink: 0;">
-      </button>
-      <%= f.number_field :quantity, class: "ingredient-quantity" %>
-      <button type="button" class="quantity-increment">
-        <img src="https://s3-alpha-sig.figma.com/img/af4a/b86d/d0ca102fd68177fa88ff7d6b2811596f?Expires=1702252800&Signature=lGAH5nDbRw6KzMaPRz3bmbA9ybvtQjJYO39HXykEuu22npXdnEdyGT1UZ0QAVEmlejRSgrrlSUzEnmdK~gtaBqs4rB12uPXzSU7GMpMQfwxQZj6De0ZpNNHSkNh2n8~QiIUG8zY46fzb8VyYE5FoWCbJNpaefbywsM0eTg79bAN0~VKRyvJHa0Z~ZwZ6S4sGz12TGt9WA4INYdSuAYMGTBUDqK8JxkzP-yscOPv5fTr0qjFvjpg4X3D9ySXFAE-Re4cbQECi4xmulSxNURK2wD7ojrSxwPJO-CmVMlVfnzh9IllQVDfRmkXx7SDtd-sgLSRzrIgvN9GbZf0TSmDaAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Incrementer" style="width: 20px; height: 20px; flex-shrink: 0;">
-      </button>
+<div class="main-container mt-4">
+  <div class="header-titre-subtitre">
+    <div class = "titre-carrotte-frigo">
+      <%= image_tag("logo.png", class: "petite-carrote") %>
+      <h1 class="title-frigo">RAJOUTER UN INGREDIENT</h1>
     </div>
 
-    <%= f.label :purchase_date, "Date d'achat :", class: "date-label" %>
-    <br>
-    <div class="date-controls">
-    <%= f.date_field :purchase_date, class: "ingredient-date" %>
+    <div class="instruction">
+      <p class="m-0"> Des nouveautés dans le frigo !</p>
     </div>
-  <div class="submit-button">
-    <%= f.submit "Ajouter Ingrédient" %>
   </div>
-  <% end %>
+
+<div class="container pe-0 mt-3">
+  <div class="ingredient-form">
+    <%= form_for @ingredient, url: ingredients_path do |f| %>
+      <%= f.label :name, "Ingredient :", class: "name-label" %>
+      <%= f.text_field :name, class: "ingredient-name", placeholder: "Ex: Kiri, carotte, etc." %>
+
+      <%= f.label :quantity, "Quantité :", class: "quantity-label" %>
+      <div class="quantity-controls">
+        <button type="button" class="quantity-decrement">
+          <img src="https://s3-alpha-sig.figma.com/img/af4a/b86d/d0ca102fd68177fa88ff7d6b2811596f?Expires=1702252800&Signature=lGAH5nDbRw6KzMaPRz3bmbA9ybvtQjJYO39HXykEuu22npXdnEdyGT1UZ0QAVEmlejRSgrrlSUzEnmdK~gtaBqs4rB12uPXzSU7GMpMQfwxQZj6De0ZpNNHSkNh2n8~QiIUG8zY46fzb8VyYE5FoWCbJNpaefbywsM0eTg79bAN0~VKRyvJHa0Z~ZwZ6S4sGz12TGt9WA4INYdSuAYMGTBUDqK8JxkzP-yscOPv5fTr0qjFvjpg4X3D9ySXFAE-Re4cbQECi4xmulSxNURK2wD7ojrSxwPJO-CmVMlVfnzh9IllQVDfRmkXx7SDtd-sgLSRzrIgvN9GbZf0TSmDaAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Incrementer" style="width: 20px; height: 20px; flex-shrink: 0;">
+        </button>
+        <%= f.number_field :quantity, class: "ingredient-quantity" %>
+        <button type="button" class="quantity-increment">
+          <img src="https://s3-alpha-sig.figma.com/img/af4a/b86d/d0ca102fd68177fa88ff7d6b2811596f?Expires=1702252800&Signature=lGAH5nDbRw6KzMaPRz3bmbA9ybvtQjJYO39HXykEuu22npXdnEdyGT1UZ0QAVEmlejRSgrrlSUzEnmdK~gtaBqs4rB12uPXzSU7GMpMQfwxQZj6De0ZpNNHSkNh2n8~QiIUG8zY46fzb8VyYE5FoWCbJNpaefbywsM0eTg79bAN0~VKRyvJHa0Z~ZwZ6S4sGz12TGt9WA4INYdSuAYMGTBUDqK8JxkzP-yscOPv5fTr0qjFvjpg4X3D9ySXFAE-Re4cbQECi4xmulSxNURK2wD7ojrSxwPJO-CmVMlVfnzh9IllQVDfRmkXx7SDtd-sgLSRzrIgvN9GbZf0TSmDaAg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Incrementer" style="width: 20px; height: 20px; flex-shrink: 0;">
+        </button>
+      </div>
+
+      <%= f.label :purchase_date, "Date d'achat :", class: "date-label mt-0 ms-0" %>
+      <br>
+      <div class="date-controls">
+      <%= f.date_field :purchase_date, class: "ingredient-date" %>
+      </div>
+</div>
+<div class="submit-button mt-3">
+  <%= f.submit "Ajouter l'ingrédient", class:"submit-button" %>
+</div>
+    <% end %>
+  </div>
 </div>
