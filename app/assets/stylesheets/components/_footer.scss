@@ -3,12 +3,12 @@
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   width: 100%;
-  z-index: 999;
+  z-index: 5;
   position: sticky;
   bottom: 0 !important;
   left: 0; /* Pour occuper toute la largeur de l'écran */
   right: 0;
-  margin-top: 50vh;
+  // margin-top: 50vh;
 }
 
 .icons-footer {

@@ -4,6 +4,9 @@ class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.all
     @recipe = Recipe.new
+    if params[:query].present?
+      @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
