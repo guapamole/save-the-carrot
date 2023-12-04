@@ -27,21 +27,27 @@
     <div class="row">
       <% @ingredients.each do |ingredient| %>
         <div class="col-12 col-sm-6 col-md-4">
-          <div class="card_design">
+          <div class="card_design" id="ingredient-card<%= ingredient.id %>">
             <div class="image-plat">
               <%= image_tag("plat.jpeg", class:"plat-image") %>
             </div>
 
             <div class="content row ingredient-infos mx-0">
-              <h2 class="title_layout" id="number-quantity2"><%= ingredient.name %></h2>
+
+              <div class="content row ingredient-infos mx-0 p-0">
+                <div class="d-flex align-items-center justify-content-between mx-0">
+                  <h2 class="title_layout mb-0" id="number-quantity2"><%= ingredient.name %></h2>
+                  <button class="delete_button" onclick="deleteIngredient(<%= ingredient.id %>)">
+                  <i class="fa-solid fa-trash-can poubelle"></i>
+                  </button>
+                </div>
               <h3 class="time_layout">Rajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
               <div class="d-flex align-items-center justify-content-start ">
-                <button class="plus_button"> - </button>
-                  <p class="mb-0" id="number-quantity"><%= ingredient.quantity %></p>
-                <button class="plus_button"> + </button>
+                <button class="plus_button pl-2" onclick="decrementQuantity(<%= ingredient.id %>)"> - </button>
+                  <p class="mb-0 mx-2" id="number-quantity<%= ingredient.id %>"><%= ingredient.quantity %></p>
+                <button class="plus_button" onclick="incrementQuantity(<%= ingredient.id %>)"> + </button>
               </div>
             </div>
-
           </div>
         </div>
       <% end %>
@@ -69,3 +75,28 @@
   </div>
 
 </div>
+
+<script>
+  function incrementQuantity(ingredientId) {
+    let quantityElement = document.getElementById("number-quantity" + ingredientId);
+    let newQuantity = parseInt(quantityElement.innerText) + 1;
+    quantityElement.innerText = newQuantity;
+  }
+
+  function decrementQuantity(ingredientId) {
+    let quantityElement = document.getElementById("number-quantity" + ingredientId);
+    let newQuantity = parseInt(quantityElement.innerText) - 1;
+    if (newQuantity >= 0) {
+      quantityElement.innerText = newQuantity;
+    }
+  }
+
+</script>
+
+
+<script>
+  function deleteIngredient(ingredientId) {
+    let cardElement = document.getElementById("ingredient-card" + ingredientId);
+    cardElement.remove();
+  }
+</script>

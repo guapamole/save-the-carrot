@@ -16,7 +16,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = current_user.ingredients.build(ingredient_params)
 
-    if save_and_analyze_image
+    if @ingredient.save
       redirect_to_ingredient(@ingredient)
     else
       render :new
@@ -42,12 +42,32 @@ class IngredientsController < ApplicationController
     end
   end
 
-  def analyse_image
+  def analyze_image
     img = params.dig(:photo).tempfile
-    response = Cloudinary::Uploader.upload(img)
-    url = response["secure_url"]
+
+    File.open(img.path) do |file|
+      @ingredient = Ingredient.new
+      @ingredient.photo.attach(io: file, filename: 'analyzed_image.jpg', content_type: 'image/jpeg')
+    end
+
+    url = Cloudinary::Uploader.upload(img)["secure_url"]
 
     ImageDetection.new(current_user, url).generate
+  end
+
+
+  def create_from_photo
+    details = analyze_image
+    raise
+
+    # @ingredient.new
+    # ingredient.name = details[:name]
+
+    if @ingredient.save
+      redirect_to_ingredient(@ingredient)
+    else
+      render :new
+    end
   end
 
   private
@@ -62,12 +82,5 @@ class IngredientsController < ApplicationController
 
   def redirect_to_ingredient(ingredient)
     redirect_to ingredients_path(ingredient)
-
   end
 end
-
-# {
-#   indredients: {
-#     eggs: 2,
-#     tomatoes: 3
-#   }}

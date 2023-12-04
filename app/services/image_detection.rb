@@ -13,7 +13,6 @@ class ImageDetection
       max_tokens: 500,
     }
   )
-    debugger
   end
 
   private
