@@ -1,13 +1,14 @@
 .footer {
   background-color: $orange;
-  height: 50px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  position: fixed;
   bottom: 0;
+  left: 0; /* Pour occuper toute la largeur de l'écran */
+  right: 0; /* Pour occuper toute la largeur de l'écran */
   width: 100%;
   z-index: 999;
   justify-content: space-between;
+  position: sticky;
 }
 
 .icons-footer {
@@ -15,20 +16,20 @@
   justify-content: space-between;
   align-items: center;
   height: auto;
-  margin-left: 55px;
-  margin-right: 55px;
+  margin-left: 35px;
+  margin-right: 35px;
   padding-top: 7px;
 }
 
 .icons-footer img {
-  width: 20px; /* Ou la largeur souhaitée */
+  width: 28px; /* Ou la largeur souhaitée */
   height: auto; /* Pour maintenir le rapport hauteur/largeur */
 }
 
 .text-footer {
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .icontext {
