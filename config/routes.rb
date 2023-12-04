@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     post "analyse_image", on: :collection
   end
 
-  resources :cookbooks, only: [:show] do
+  resources :cookbooks, only: [:show, :destroy] do
     resources :recipes, only: [:new, :create]
   end
 
-  resources :recipes, only: [:index, :show, :create]
+  resources :recipes, only: [:index, :show, :create, :destroy]
   resources :ingredients, only: [:destroy]
 end
