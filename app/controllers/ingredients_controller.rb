@@ -66,7 +66,6 @@ class IngredientsController < ApplicationController
   end
 end
 
-
 # {
 #   indredients: {
 #     eggs: 2,
