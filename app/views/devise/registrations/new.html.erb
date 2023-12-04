@@ -9,7 +9,7 @@ body {
   <div class="row">
     <div class="col-sm-6">
       <div class="se-connecter-form">
-        <h2 class= "mt-4 se-connecter-titre">S'inscrire</h2>
+        <h2 class= "mt-4 se-connecter-titre"><strong>S'inscrire</strong></h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
@@ -18,7 +18,7 @@ body {
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "hello@savetecarrot.com" },
+                        input_html: { autocomplete: "hello@savethecarrot.com" },
                         label: "Email"%>
             <%= f.input :password,
                         required: true,
@@ -32,7 +32,7 @@ body {
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Se inscrire", id: "se-connecter-bouton" %>
+            <%= f.button :submit, "S'inscrire", id: "se-connecter-bouton" %>
           </div>
         <% end %>
 

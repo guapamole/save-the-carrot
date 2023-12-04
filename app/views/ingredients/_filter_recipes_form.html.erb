@@ -2,9 +2,10 @@
 <div class="container filter-content">
   <p><strong>Qu'est-ce qu'on cuisine aujourd'hui ? </strong></p>
     <div class="filter-recipe-form">
-      <%= simple_form_for :choices, url: recipes_path, method: :get do |f| %>
+      <%= simple_form_for :choices, url: recipes_path, method: :get, html: { data: { loader_target: "form", action: "submit->loader#displayLoader "} } do |f| %>
 
       <div data-controller="quantity">
+
           <div class="quantity-input row align-items">
               <%= f.input :quantity, as: :numeric, class: "col" , input_html: { value: 1, data: { quantity_target: "nombre" } }, label: "On est combien ?" %>
             <div class="qty_button">
@@ -22,11 +23,9 @@
         </div>
 
 
-        </div>
-
-
-
-        <%= f.submit "Trouve moi des recettes !", class: "main_btn" %>
+        <%= f.submit "Trouve moi des recettes !", class: "main_btn"%>
       <% end %>
+
+
     </div>
 </div>

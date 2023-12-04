@@ -1,6 +1,6 @@
 
 
-<div class="main-container mt-4">
+<div class="main-container mt-4" data-controller="loader">
   <div class="header-titre-subtitre">
     <div class = "titre-carrotte-frigo">
       <%= image_tag("logo.png", class: "petite-carrote") %>
@@ -12,16 +12,35 @@
     </div>
   </div>
 
-  <div class="boutons-rajouter-generer mx-4 my-3">
+    <div class="boutons-rajouter-generer mx-4 my-3">
     <!-- Button trigger modal -->
     <button type="button" class="boutons-frigo1 p-0 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Générer une recette
     </button>
 
+
     <div class="button-create-recipe ms-1">
       <%= link_to "Ajouter un produit", new_ingredient_path, id:"boutons-frigo2"%>
     </div>
   </div>
+
+    <%# START SEARCH--------------------- %>
+  <div class="search-bar-group mb-2">
+    <%# <div class="d-flex noidea"> %>
+      <div class="search-bar my-2">
+        <%= form_with url: ingredients_path, method: :get, class: "form d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Chercher un ingrédient..."
+            %>
+          <%#= image_submit_tag("canard-search.png", class: "btn-search", alt: "Rechercher") %>
+        <% end %>
+      </div>
+    <%# </div> %>
+  </div>
+
+<%# END SEARCH--------------------- %>
 
   <div class="container">
     <div class="row">
@@ -52,8 +71,25 @@
     </div>
   </div>
 
+  <%# Loader start %>
+  <div class="loader-overlay d-none" data-loader-target="loader">
+      <div class="overlay" onclick="showSpinner()">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
 
-  <!-- Modal -->
+      <div class="message content hidden">
+        <p> On cherche de délicieuses recettes ... </p>
+      </div>
+  </div>
+
+    <%# Loader end %>
+
+
+
+
+  <!-- Modal filtres-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content bg-warning-subtle">
@@ -70,7 +106,11 @@
         </div>
       </div>
     </div>
+
+
   </div>
+
+
 
 </div>
 
