@@ -34,7 +34,7 @@ class ImageDetection
 
   def prompt
     "Give me a list of food ingrdients that are in this image - I want a list of ingredients with there types (ex: milk, tomato, eggs, etc...).
-    I want the list to be in a format that I can use in my code.
+    I want the list to be in a format that I can use in my code but can you give me the result in french and not in english.
     I expect this format of data : [
       {'type': 'fruit', 'name': 'lime'},
       {'type': 'vegetable', 'name': 'cucumber'},
