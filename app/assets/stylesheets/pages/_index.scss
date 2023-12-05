@@ -10,7 +10,6 @@
   align-items: start;
   padding-left: 5px;
   display: flex;
-  text-align: center;
 }
 
 .titre-carrotte-frigo {
@@ -269,4 +268,24 @@ color: black;
 
 .search-bar {
   width: 100%;
+}
+
+.fa-magnifying-glass {
+  font-size: 25px;
+  margin-top: 8px;
+  margin-left: 10px;
+  color: #DFDFDF;
+
+}
+
+input::placeholder {
+  color: #DFDFDF;
+}
+
+.btn-search {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+
 }
