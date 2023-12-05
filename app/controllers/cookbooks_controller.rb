@@ -14,7 +14,6 @@ class CookbooksController < ApplicationController
     redirect_to cookbook_path(current_user)
   end
 
-
     # @ingredient = Ingredient.find(params[:ingredient_id])
     # @recipe = Recipe.find(params[:recipe_id])
     #display a full recipe

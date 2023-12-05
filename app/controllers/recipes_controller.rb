@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     @recipe.name = params[:name]
     @recipe.difficulty = params[:difficulty]
     @recipe.preptime = params[:preptime]
-    @recipe.image = params[:with_images]
+    @recipe.image_url = params[:img]
     @recipe.cookbook = current_user.cookbooks.first
 
     if @recipe.save
@@ -31,5 +31,6 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to cookbook_path(current_user)
   end
+
 
 end
