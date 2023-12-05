@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
     quantity = params.dig(:choices, :quantity)
     @meal_type = params.dig(:choices, :meal_type)
     @recipes = GenerateRecipes.new(current_user, @ingredients, @quantity, @meal_type).generate(with_images: true)
+    @recipe = Recipe.new
   end
 
   def create
@@ -15,7 +16,8 @@ class RecipesController < ApplicationController
     @recipe.difficulty = params[:difficulty]
     @recipe.preptime = params[:preptime]
     # @recipe.photo.attach(io: params[:img])
-    @recipe.photo.attach(io: params[:img])
+    file = params[:img]
+    @recipe.photo.attach(io: URI.open(file), filename:"image.jpg", content_type: "image/jpg")
     @recipe.cookbook = current_user.cookbooks.first
 
     if @recipe.save
