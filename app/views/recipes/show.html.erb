@@ -47,7 +47,11 @@ body {
     <p><%= @recipe.content %></p>
 
   <div class="div-recipe-done">
-    <button class="button-recipe-done">Recette realisée</button>
+    <button class="button-recipe-done" data-action="click->end#displayCongrats" data-target="congrats.congrats">Recette realisée</button>
+  </div>
+
+  <div class="message content hidden" data-end-target="end.congrats">
+    <p>BRAVO, recette terminée ! On enlève les ingrédients de votre frigo ...</p>
   </div>
 
 </div>

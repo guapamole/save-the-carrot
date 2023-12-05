@@ -159,7 +159,7 @@ input::placeholder {
 
 .submit-button {
   flex-shrink: 0;
-  background-color: rgba(251, 221, 186, 0.95);
+  background-color: #FFF8F0;
   font-family: Manrope;
   margin-top: 20px;
   text-decoration: none;
@@ -189,8 +189,8 @@ input::placeholder {
   top: 0px;
   position: absolute;
   z-index: 1500;
-  width: 110vw;
-  height: 105vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   /* align-content: space-between; */
@@ -198,4 +198,3 @@ input::placeholder {
   align-items: center;
   font-weight: 900;
 }
-

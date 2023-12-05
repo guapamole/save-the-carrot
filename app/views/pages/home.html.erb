@@ -1,7 +1,7 @@
 
 <%# DEBUT STYLE--------------------------------------------- %>
 
-<style>
+<%# <style>
 body {
   min-height: 100vh;
   background-color: #F28E19;
@@ -14,33 +14,19 @@ body {
   background-repeat: no-repeat;
 
 }
-</style>
+</style> %>
 <%# FIN STYLE--------------------------------------------- %>
-<div class="main-container row">
+<div class="bg-home">
 
-
-    <div class="titre">
-    <h1 id="titre-hp">Save the carrot</h1>
-    </div>
-
-    <div class="logo">
-    <%= link_to ingredients_path do %>
-      <%= image_tag("logo.png", class: "image-logo") %>
-    <% end %>
-    </div>
 
   <div class="session">
     <% unless user_signed_in? %>
       <div class="fixed-bottom">
-      <div class="btnmilieu">
-        <div class="buttons-container">
-          <%= link_to "S'inscrire",  new_user_registration_path, class:"btnlog" %>
-        </div>
-      </div>
 
-        <div class="buttons-container">
-            <%= link_to "Me connecter",  user_session_path, class:"btnlog" %>
-        </div>
+        <%= link_to "S'inscrire",  new_user_registration_path, class:"btn-patate" %>
+
+        <%= link_to "Me connecter",  user_session_path, class:"btn-patate" %>
+
       </div>
     <% end %>
 

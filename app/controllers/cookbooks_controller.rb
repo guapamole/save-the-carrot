@@ -10,7 +10,7 @@ class CookbooksController < ApplicationController
   end
 
   def destroy
-    @co.destroy
+    @cookbook.destroy
     redirect_to cookbook_path(current_user)
   end
 
