@@ -9,9 +9,9 @@ window.Stimulus = application;
 export { application };
 
 document.addEventListener("DOMContentLoaded", function() {
-  var quantityField = document.querySelector(".ingredient-quantity");
-  var decrementButton = document.querySelector(".quantity-decrement");
-  var incrementButton = document.querySelector(".quantity-increment");
+  let quantityField = document.querySelector(".ingredient-quantity");
+  let decrementButton = document.querySelector(".quantity-decrement");
+  let incrementButton = document.querySelector(".quantity-increment");
 
   decrementButton.addEventListener("click", function() {
     if (quantityField.value > 0) {

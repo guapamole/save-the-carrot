@@ -62,8 +62,10 @@ input::placeholder {
 .quantity-controls {
   display: flex;
   margin-top: 10px;
-  width: 75px;
+  width: 100px;
   height: 75px;
+  padding-left: 20px;
+
 }
 
 .quantity-decrement-increment {
@@ -104,7 +106,7 @@ input::placeholder {
 .quantity-increment {
   width: 75px;
   height: 75px;
-  border-radius: 50px;
+  border-radius: 16px;
   flex-shrink: 0;
   // background-color: #FFF8F0;
   text-align: center;
@@ -119,6 +121,26 @@ input::placeholder {
   margin-top: 12px;
   margin-left: 8px;
 }
+
+.quantity-decrement {
+  width: 75px;
+  height: 75px;
+  border-radius: 16px;
+  flex-shrink: 0;
+  // background-color: #FFF8F0;
+  text-align: center;
+  font-family: Manrope;
+  font-weight: bold;
+  word-wrap: break-word;
+  font-size: 47px;
+
+}
+
+.quantity-decrement img {
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
 
 .date-label {
   color: #000;
