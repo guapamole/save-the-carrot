@@ -53,8 +53,11 @@
       <% @ingredients.each do |ingredient| %>
         <div class="col-12 col-sm-6 col-md-4">
           <div class="card_design" id="ingredient-card<%= ingredient.id %>">
+
             <div class="image-plat">
-              <%= image_tag("plat.jpeg", class:"plat-image") %>
+              <% if ingredient.photo.present? %>
+                <%= cl_image_tag ingredient.photo.key, class: "plat-image" %>
+              <% end %>
             </div>
 
               <div class="content row ingredient-infos mx-0 p-0">

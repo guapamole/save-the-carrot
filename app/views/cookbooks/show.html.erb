@@ -20,6 +20,9 @@
         <div class="card_design">
 
           <div class="image-plat">
+            <% if recipe.photo.present? %>
+              <%= cl_image_tag(recipe.photo.key, class: "plat-image") %>
+            <% end %>
           <%#= image_tag recipe.photo.service_url, height: 300, width: 400, crop: :fill %>
 
             <%#= cl_image_tag(recipe.image_url, class: "plat-image") %>
