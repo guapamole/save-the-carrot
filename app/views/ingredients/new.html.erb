@@ -21,11 +21,11 @@
 
       <%= f.label :quantity, "Quantité :", class: "quantity-label" %>
       <div class="quantity-controls">
-        <button type="button" class="quantity-decrement-increment">
+        <button type="button" class="quantity-decrement">
           -
         </button>
         <%= f.number_field :quantity, class: "ingredient-quantity" %>
-        <button type="button" class="quantity-decrement-increment">
+        <button type="button" class="quantity-increment">
           +
         </button>
       </div>
@@ -37,8 +37,31 @@
       </div>
 </div>
 <div class="submit-button mt-3">
-  <%= f.submit "Ajouter", class:"submit-button" %>
+
+  <button><%= f.submit "Ajouter l'ingrédient", class:"submit-button" %></button>
+
 </div>
     <% end %>
   </div>
 </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+var quantityField = document.querySelector(".ingredient-quantity");
+   var decrementButton = document.querySelector(".quantity-decrement");
+   var incrementButton = document.querySelector(".quantity-increment");
+
+  decrementButton.addEventListener("click", function() {
+    if (quantityField.value > 0) {
+      quantityField.stepDown();
+    }
+  });
+
+  incrementButton.addEventListener("click", function() {
+    quantityField.stepUp();
+  });
+   });
+
+</script>

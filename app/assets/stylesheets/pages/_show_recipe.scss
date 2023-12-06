@@ -4,13 +4,24 @@
 
 .card-details-recette {
   background-color: white;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  position: fixed;
-  bottom: 0;
-  height: 75%;
-  width: -webkit-fill-available;
-  padding: 10px;
+  margin-bottom: 150px;
+  // border-top-right-radius: 30px;
+  // border-top-left-radius: 30px;
+  // position: fixed;
+  // bottom: 0;
+  // height: 75%;
+  // width: -webkit-fill-available;
+  // padding: 10px;
+
+}
+
+.header-recipe-show {
+  background-color : #F28E19;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  // position: fixed;
+  height: 208px;
+  width: 100%;
 
 }
 
@@ -28,19 +39,31 @@
   padding: 4px;
   text-align: center;
   width: 45%;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .button-recipe-done {
- /* Cenre le contenu verticalement */
+  flex-shrink: 0;
+  background-color: #F28E19;;
+  font-family: Manrope;
+  margin-top: 20px;
+  text-decoration: none;
   color: white;
-  background-color: #F28E19;
-  border-radius: 50px;
-  padding: 4px;
-  text-align: center;
-  width: 45%;
+  padding: 10px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 90px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 90px;
+  // width: 280px; /* Ajustez la largeur souhaitée */
+  display: inline-block; /* Pour permettre le réglage de la largeur */
+  text-align: center; /* Pour centrer le texte horizontalement */
+  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+  margin: 0 5px;
+  height: 75px;
   border: none;
   font-size: 20px;
+  font-weight: bold;
+  width: 50%;
 }
 
 .div-recipe-done {
@@ -63,7 +86,7 @@
 }
 
 .quick-infos {
-  width: 35%;
+  // width: 35%;
 }
 
 .preparation-card, .cuisson-card, .difficulte-card {
@@ -71,10 +94,25 @@
   border-radius: 30px;
   text-align: center;
   font-weight: bold;
+  width: 146px;
+  padding: 10px;
+  height: 70px;
 
 }
 
 .image-recette {
-  border-radius: 10px;
+  border-radius: 50px;
   width: 150px;
+}
+
+.sub-titre-details-recette, .liste-ingredients, .instructions {
+  font-size: 18px;
+}
+
+.liste-ingredients {
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
 }

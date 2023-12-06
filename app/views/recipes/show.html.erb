@@ -1,50 +1,106 @@
 
 <style>
 body {
-  background-color : #F28E19
+  /* background-color : #F28E19; */
+  min-height: calc(100vh - 72px);
 }
 </style>
 
+  <div class="header-recipe-show">
 <div class="container">
-  <div class="row">
-    <div class="col mt-4 bloc-quick-infos">
-      <div class="image-recipe">
-        <%= image_tag("plat.jpeg", class:"image-recette")%>
-      </div>
-
-      <div class="quick-infos">
-        <div class="preparation-card">
-          <p>Preparation</p>
+    <div class="row">
+      <div class="col mt-4 bloc-quick-infos">
+        <div class="image-recipe">
+        <%# ------Modifier image %>
+          <%= image_tag("plat.jpeg", class:"image-recette")%>
         </div>
 
-        <div class="cuisson-card">
-          <p>Cuisson</p>
-        </div>
+        <div class="quick-infos">
+          <div class="preparation-card  mb-3">
+          <%# ----------------Rajouter temps  %>
+            <p class= "mb-0">Preparation :</p>
+            <p class = "mb-0"><i class="fa-solid fa-clock"></i><%= @recipe.preptime.hour unless @recipe.preptime.nil?  %> min</p>
+          </div>
 
-        <div class="difficulte-card">
-          <p>Difficulté</p>
+
+          <div class="difficulte-card">
+            <p class= "mb-0">Difficulté :
+              <div class="difficulty">
+                <% case @recipe.difficulty%>
+                <% when 1 %>
+                <div class="div">
+                  <%= image_tag("star.png", class:"etoile") %>
+                </div>
+
+                <% when 2 %>
+                <div class="div">
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                </div>
+
+                <% when 3 %>
+                <div class="div">
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                </div>
+
+                <% when 4 %>
+                <div class="div">
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                </div>
+
+                <% when 5 %>
+                <div class="div">
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                  <%= image_tag("star.png", class:"etoile") %>
+                </div>
+
+                <% else %>
+                  <p>Dificulté inconnue</p>
+                <% end %>
+              </div>
+
+
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
-
+  </div>
 
 
 <div class="card-details-recette">
+<div class="container">
 
   <div class="titre-details-recette text-center">
-    <h2 id="titre-details-recette-id"><%= @recipe.name %></h2>
+    <h2 id="titre-details-recette-id" class ="my-3"><%= @recipe.name %></h2>
   </div>
 
-  <div class="sub-titre-details-recette">
+  <div class="sub-titre-details-recette mb-3">
     <h3 class="mb-0">Ingredients</h3>
   </div>
-  holaaaaaaaaa zefer gf
-  <div class="sub-titre-details-recette mb-0">
-    <h3 class="mb-0">Instructions</h3>
+  <div class="liste-ingredients">
+    <ul class = "ps-0">
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li><i class="fa-regular fa-square me-2"></i><%=ingredient%></li>
+      <% end  %>
+    </ul>
   </div>
+
+  <div class="sub-titre-details-recette mb-3">
+      <h3 class="mb-0">Instructions</h3>
+  </div>
+  <div class="instructions">
     <p><%= @recipe.content %></p>
+  </div>
 
   <div class="div-recipe-done">
     <button class="button-recipe-done" data-action="click->end#displayCongrats" data-target="congrats.congrats">Recette realisée</button>
@@ -54,4 +110,5 @@ body {
     <p>BRAVO, recette terminée ! On enlève les ingrédients de votre frigo ...</p>
   </div>
 
+</div>
 </div>

@@ -9,10 +9,7 @@ class CookbooksController < ApplicationController
     @recipes = @cookbook.recipes
   end
 
-  def destroy
-    @cookbook.destroy
-    redirect_to cookbook_path(current_user)
-  end
+
 
     # @ingredient = Ingredient.find(params[:ingredient_id])
     # @recipe = Recipe.find(params[:recipe_id])
