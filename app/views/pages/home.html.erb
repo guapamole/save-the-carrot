@@ -31,8 +31,10 @@ body {
 
 
     <% if user_signed_in? %>
-        <%= link_to "dashboard",  dashboard_path, class:"btn-patate" %>
-      <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
+      <div class="fixed-bottom">
+        <%= link_to "Menu",  dashboard_path, class:"btn-patate" %>
+      </div>
+        <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
     <% end %>
   </div>
 
