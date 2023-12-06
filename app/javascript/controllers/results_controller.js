@@ -5,11 +5,11 @@ export default class extends Controller {
   connect() {
     this.resultsData = [];
     this.channel = createConsumer().subscriptions.create(
-      { channel: "ResultsChannel" },
+      { channel: 'ResultsChannel' },
       { received: (data) => this._handleData(data) }
     );
 
-    document.getElementById("validate-fridge-button").addEventListener("click", () => {
+    document.getElementById("validate-fridge-button").addEventListener('click', () => {
       this.validateButtonClick();
     });
   }
@@ -17,7 +17,7 @@ export default class extends Controller {
   _handleData(data) {
     this.resultsData = data;
     data.forEach((item) => {
-      this.element.insertAdjacentHTML("beforeend", "${item.name}<br>");
+      this.element.insertAdjacentHTML("beforeend", `${item.name}<br>`);
     });
   }
 
@@ -27,7 +27,7 @@ export default class extends Controller {
     }
 
   addResultsToContainer(results) {
-    const container = document.getElementById("results-container");
+    const container = document.getElementById('results-container');
 
     if (Array.isArray(results)) {
       results.forEach((item) => {
