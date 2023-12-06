@@ -1,68 +1,71 @@
-
 <% recipes["recipes"].each do |recipe| %>
   <div class="col-12 col-sm-6 col-md-4">
     <div class="card_design me-0 px-2">
       <div class="image-plat">
         <%= image_tag(recipe["img"], class: "plat-image") %>
       </div>
+        <div class="content row ingredient-infos">
+          <div class="d-flex">
+            <div class="infos-recette">
+              <h3 class="title_layout_recipes mb-0" id="number-quantity2"><%= recipe["name"] %>
+              </h3>
 
-      <div class="content row ingredient-infos">
-      <div class="d-flex">
-      <div class="infos-recette">
-        <h3 class="title_layout_recipes mb-0" id="number-quantity2"><%= recipe["name"] %></h3>
+              <div class="difficulty">
+                <% case recipe["difficulty"].to_i %>
+                  <% when 1 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
 
-          <div class="difficulty">
-            <% case recipe["difficulty"].to_i %>
-            <% when 1 %>
-            <div class="div">
-              <%= image_tag("star.png", class:"etoile") %>
+                  <% when 2 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 3 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 4 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 5 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% else %>
+                    <p>Dificulté inconnue</p>
+                <% end %>
+              </div>
+
+                <h3 class="mb-0 mt-2">`
+                  <i class="fa-solid fa-clock"></i>
+                  <%= recipe["preptime"].to_i + recipe["cooking_time"].to_i  unless recipe["preptime"].nil? %> minutes
+                </h3>
+
+
             </div>
-
-            <% when 2 %>
-            <div class="div">
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
+            <div class="like">
+            <%= link_to "", recipes_path(@recipe, recipe), data: { turbo_method: :post }, class:"fa-solid fa-heart" %>
             </div>
-
-            <% when 3 %>
-            <div class="div">
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-            </div>
-
-            <% when 4 %>
-            <div class="div">
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-            </div>
-
-            <% when 5 %>
-            <div class="div">
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-              <%= image_tag("star.png", class:"etoile") %>
-            </div>
-
-            <% else %>
-              <p>Dificulté inconnue</p>
-            <% end %>
           </div>
-
-            <h3 class="mb-0 mt-2"><i class="fa-solid fa-clock"></i><%= recipe["preptime"].to_i + recipe["cooking_time"].to_i  unless recipe["preptime"].nil?  %>
-      minutes</h3>
-
-
-      </div>
-        <div class="like">
-          <%= link_to "", recipes_path(@recipe, recipe), data: {turbo_method: :post}, class:"fa-solid fa-heart"%>
         </div>
-      </div>
-      </div>
+
     </div>
   </div>
 <% end %>
+

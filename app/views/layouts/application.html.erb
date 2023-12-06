@@ -16,21 +16,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Darumadrop+One&family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Darumadrop+One&family=Manrope:wght@200&family=Ubuntu&display=swap" rel="stylesheet">
 
+
+    <%# PWA %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= render 'shared/ios_pwa_links' %>
+    <%# PWA %>
+
+
   </head>
 
-  <body>
     <style>
-    body {
-      min-height: calc(100vh - 72px);
-    }
+      body {
+        min-height: calc(100vh - 72px);
+        z-index: -50;
+      }
     </style>
-
+  <body>
 
     <%= yield %>
 
-  <% unless current_page?(root_path)  || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(dashboard_path)%>
-    <%= render "shared/footer", class:""%>
-  <% end %>
-
+    <% unless current_page?(root_path)  || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(dashboard_path)%>
+      <%= render "shared/footer", class:""%>
+    <% end %>
   </body>
 </html>

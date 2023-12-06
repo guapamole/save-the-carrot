@@ -5,9 +5,9 @@ body {
 }
 </style>
 
-<div class="container">
+<div class="bg-content p-5">
   <div class="se-connecter-form">
-    <h2 class= "mt-4 se-connecter-titre"><strong>Se connecter</strong></h2>
+    <h2 class= "mt-4 title-frigo text-light"><strong>Se connecter</strong></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -23,7 +23,7 @@ body {
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Se connecter", id: "se-connecter-bouton" %>
+        <%= f.button :submit, "Se connecter", id: "btn-patate-forme" %>
       </div>
     <% end %>
   </div>

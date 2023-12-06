@@ -37,7 +37,7 @@
                 class: "form-control",
                 placeholder: "Chercher un ingrédient..."
           %>
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
               <button type="submit" class="btn-search">
 
         <% end %>
@@ -53,8 +53,11 @@
       <% @ingredients.each do |ingredient| %>
         <div class="col-12 col-sm-6 col-md-4">
           <div class="card_design" id="ingredient-card<%= ingredient.id %>">
+
             <div class="image-plat">
-              <%= image_tag("plat.jpeg", class:"plat-image") %>
+              <% if ingredient.photo.present? %>
+                <%= cl_image_tag ingredient.photo.key, class: "plat-image" %>
+              <% end %>
             </div>
 
               <div class="content row ingredient-infos mx-0 p-0">
@@ -70,7 +73,7 @@
                 <br>
                 <%= (((Time.now - ingredient.created_at) / 1.day).round) %> jours
               </h3>
-              <div class="d-flex align-items-center justify-content-start ">
+              <div class="d-flex align-items-center justify-content-start pb-2">
 
                 <button class="plus_button pl-2" onclick="decrementQuantity(<%= ingredient.id %>)"> - </button>
                   <p class="mb-0 mx-2" id="number-quantity<%= ingredient.id %>"><%= ingredient.quantity %></p>
@@ -114,7 +117,7 @@
   <!-- Modal filtres-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content bg-warning-subtle">
+      <div class="bg-content bg-warning-subtle">
 
         <div class="modal-header">
           <h1 class="modal-title" id="exampleModalLabel"> <strong> Personnaliser ma recette </strong></h1>
