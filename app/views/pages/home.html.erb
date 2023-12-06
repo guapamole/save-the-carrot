@@ -18,7 +18,6 @@ body {
 <%# FIN STYLE--------------------------------------------- %>
 <div class="bg-home">
 
-pouet 
   <div class="session">
     <% unless user_signed_in? %>
       <div class="fixed-bottom">
@@ -32,6 +31,7 @@ pouet
 
 
     <% if user_signed_in? %>
+        <%= link_to "dashboard",  dashboard_path, class:"btn-patate" %>
       <%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-log-out" %>
     <% end %>
   </div>
