@@ -14,9 +14,12 @@
 
     <div class="">
     <!-- Button trigger modal -->
-    <button type="button" class="btn-patate" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%# <button type="button" class="btn-patate" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Générer une recette
-    </button>
+    </button> %>
+
+    <%= link_to "Générer une recette", recipes_path, class: "btn-patate", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
+
 
 
     <div class="">
