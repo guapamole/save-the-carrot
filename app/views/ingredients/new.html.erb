@@ -13,20 +13,20 @@
 
 
 <div class="container pe-0 mt-3 ps-0">
-  <div class="ingredient-form">
+  <div class="ingredient-form ps-3 pt-3 pe-0">
     <%= form_for @ingredient, url: ingredients_path do |f| %>
       <%= f.label :name, "Ingrédient :", class: "name-label" %>
       <%= f.text_field :name, class: "ingredient-name", placeholder: "Ex: Kiri, carotte, etc." %>
 
       <%= f.label :quantity, "Quantité :", class: "quantity-label" %>
       <div class="quantity-controls">
-        <button type="button" class="quantity-decrement">
+        <%# <button type="button" class="quantity-decrement">
           -
-        </button>
+        </button> %>
         <%= f.number_field :quantity, class: "ingredient-quantity" %>
-        <button type="button" class="quantity-increment">
+        <%# <button type="button" class="quantity-increment">
           +
-        </button>
+        </button> %>
       </div>
 
       <%= f.label :purchase_date, "Date d'achat :", class: "date-label mt-0 ms-0" %>
@@ -34,6 +34,8 @@
       <div class="date-controls">
       <%= f.date_field :purchase_date, class: "ingredient-date" %>
       </div>
+
+      <%= f.file_field :photo, class: "ingredient-photo" %>
 </div>
 <div class="sub">
 

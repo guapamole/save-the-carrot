@@ -12,15 +12,6 @@ class User < ApplicationRecord
 
 
   def create_default_cookbook
-
     self.cookbooks.create
-
   end
-
-  private
-
-  def async_update
-    UpdateUserJob.perform_later(self)
-  end
-
 end
