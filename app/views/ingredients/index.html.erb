@@ -115,8 +115,8 @@
 
 
   <!-- Modal filtres-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="pointer-events:none;">
+    <div class="modal-dialog" style="pointer-events:auto;">
       <div class="bg-content bg-warning-subtle">
 
         <div class="modal-header">
@@ -135,12 +135,10 @@
       </div>
     </div>
 
-
   </div>
-
 </div>
 
-<script>
+<%# <script>
   function incrementQuantity(ingredientId) {
     let quantityElement = document.getElementById("number-quantity" + ingredientId);
     let newQuantity = parseInt(quantityElement.innerText) + 1;
@@ -163,4 +161,4 @@
     let cardElement = document.getElementById("ingredient-card" + ingredientId);
     cardElement.remove();
   }
-</script>
+</script> %>

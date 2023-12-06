@@ -1,5 +1,5 @@
 
-<div class="modal-body filter-content">
+<div class="filter-content">
   <p class="filter"><strong>Qu'est-ce qu'on cuisine aujourd'hui ? </strong></p>
     <div class="filter-recipe-form">
       <%= simple_form_for :choices, url: generate_recipes_recipes_path, method: :get, html: { data: { loader_target: "form", action: "submit->loader#displayLoader "} } do |f| %>
