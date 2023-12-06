@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :recipes, only: [:new, :create]
   end
 
-  resources :recipes, only: [:index, :show, :create, :destroy]
+  resources :recipes, only: [:index, :show, :create, :destroy] do
+    get "/generate_recipes", to: "recipes#generate_recipes", on: :collection
+  end
+
+
   resources :ingredients, only: [:destroy]
 end

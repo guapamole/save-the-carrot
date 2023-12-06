@@ -20,7 +20,9 @@
         <div class="card_design">
 
           <div class="image-plat">
-              <%# <%= image_tag(recipe.photo.attach, class: "plat-image") %> %>
+          <%#= image_tag recipe.photo.service_url, height: 300, width: 400, crop: :fill %>
+
+            <%= cl_image_tag(recipe.image_url, class: "plat-image") %>
           </div>
 
           <div class="content row ingredient-infos mx-0">

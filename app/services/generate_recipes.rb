@@ -36,6 +36,30 @@ class GenerateRecipes
   end
 
   def message
-    "Donne moi une liste en format json (clé recipes) de recettes simples avec les ingredients #{list}. Avant la liste, peux-tu indiquer le nom de chaque recettes (json clé name), la difficulté (sur 5), preptime, cooking_time, #{@meal_type}, et le nombre de personne #{@quantity}."
+    "Give me a list of 2 simple recipes for a #{meal_type} including these ingredients #{list}, for #{@quantity} persons.
+    I expect a response that match this json format:
+      {
+        recipes: [
+          {
+            name: 'eggs omelette',
+            difficulty: '2',
+            preptime: '45',
+            cooking_time: '30',
+            meal_type: 'meal',
+            ingredients: ['eggs', 'pepper', 'butter'],
+            content: 'Season the beaten eggs well with salt and pepper. Heat the oil and butter in a non-stick frying pan over a medium-low heat until the butter has melted and is foaming.'
+          }
+        ]
+      }
+    The difficulty must be a number from 1 to 5 and content must be the instructions. The answer must be in french. ingredients must be an array. ingredients must be in french.
+    "
+  end
+
+  def meal_type
+    case @meal_type.downcase
+    when 'entrée' then 'starter'
+    when 'plat' then 'meal'
+    when 'dessert' then 'dessert'
+    end
   end
 end
