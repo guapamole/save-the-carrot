@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :cookbooks
 
   after_create :create_default_cookbook
-  after_commit :async_update, on: [:create, :update]
 
 
   def create_default_cookbook
