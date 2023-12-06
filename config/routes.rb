@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
   devise_for :users
   root 'pages#home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -24,9 +25,7 @@ Rails.application.routes.draw do
 
   resources :ingredients, only: [:destroy]
 
-  require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 end
-
