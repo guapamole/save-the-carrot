@@ -124,32 +124,32 @@ body {
   margin-bottom: 60px;
 }
 
-.btn-patate {
-  padding: 35px 30px;
-  text-decoration: none;
-  color: $light;
-  display: block;
-  font-weight: bold;
-  font-size: 20px;
-  position: relative;
-  text-align: center;
-  &:hover {
-    color: $light;
-  }
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("btn.png");
-    z-index: -1;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  &:last-child::before {
-    transform: rotate(180deg);
-  }
-}
+// .btn-patate {
+//   padding: 35px 30px;
+//   text-decoration: none;
+//   color: $light;
+//   display: block;
+//   font-weight: bold;
+//   font-size: 20px;
+//   position: relative;
+//   text-align: center;
+//   &:hover {
+//     color: $light;
+//   }
+//   &::before {
+//     content: "";
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background-image: url("btn.png");
+//     z-index: -1;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//   }
+//   &:last-child::before {
+//     transform: rotate(180deg);
+//   }
+// }
