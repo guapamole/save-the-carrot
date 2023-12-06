@@ -26,6 +26,11 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def recipe_done
+    @ingredient.recipe_ingredients.destroy_all
+    redirect_to ingredient_path(@ingredient)
+  end
+
   def edit
   end
 

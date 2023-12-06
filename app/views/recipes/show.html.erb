@@ -47,7 +47,8 @@ body {
     <p><%= @recipe.content %></p>
 
   <div class="div-recipe-done">
-    <button class="button-recipe-done">Recette realisée</button>
+      <%= button_to "Recette réalisée", recipe_done_ingredient_path(@ingredient), method: :post, class: 'button-recipe-done' %>
+    <%# <button class="button-recipe-done">Recette realisée</button> %>
   </div>
 
 </div>

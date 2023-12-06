@@ -36,6 +36,10 @@ class GenerateRecipes
   end
 
   def message
-    "Donne moi une liste en format json (clé recipes) de recettes simples avec les ingredients #{list}. Avant la liste, peux-tu indiquer le nom de chaque recettes (json clé name), la difficulté (sur 5), preptime, cooking_time, #{@meal_type}, et le nombre de personne #{@quantity}."
+    "Provide a JSON-formatted list (key: 'recipes') of simple recipes containing the ingredients #{list}.
+    For each recipe, include the following details: name (JSON key),
+    difficulty (on a scale of 5), prep time, cooking time, #{@meal_type}, and the number of servings #{@quantity}.
+    Ensure that the list is structured with the necessary information for each recipe.
+    Additionally, include any specific instructions or requirements for the preparation if needed."
   end
 end

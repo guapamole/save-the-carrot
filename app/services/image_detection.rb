@@ -17,6 +17,7 @@ class ImageDetection
     return response.dig("choices", 0, "message", "content")
                    .scan(/\{'type': '.+', 'name': '.+'}/)
                    .map { |item| JSON.parse(item.gsub("'", '"')) }
+
   end
 
   private
@@ -33,8 +34,10 @@ class ImageDetection
   end
 
   def prompt
-    "Give me a list of food ingrdients that are in this image - I want a list of ingredients with there types (ex: milk, tomato, eggs, etc...).
-    I want the list to be in a format that I can use in my code but can you give me the result in french and not in english.
+    "Provide me with a list of food ingredients present in this image.
+    I want a list of ingredients with their types (e.g., milk, tomato, eggs, etc.).
+    I want the list to be in a format that I can use in my code, but can you give me the result in French
+    with each word separated by a comma and a space (e.g., cucumber, carrot juice, lime, etc.).
     I expect this format of data : [
       {'type': 'fruit', 'name': 'lime'},
       {'type': 'vegetable', 'name': 'cucumber'},

@@ -1,5 +1,54 @@
-<%= form_with model: @ingredient, url: analyze_image_ingredients_path, method: :post, html: { multipart: true, id: 'ingredient-form' } do |form| %>
-  <%= form.label :photo, "Télécharger une photo (JPG/JPEG)" %>
-  <%= form.file_field :photo, accept: 'image/jpeg,image/jpg' %>
-  <%= form.submit "Analyse de la photo", id: 'submit-button' %>
-<% end %>
+<div class="main-container mt-4">
+  <div class="header-titre-subtitre">
+    <div class = "titre-carrotte-frigo">
+      <%= image_tag("logo.png", class: "petite-carrote") %>
+      <h1 class="title-frigo">AJOUTEZ VOTRE FRIGO</h1>
+    </div>
+    <br>
+<div class="flex- pe-0 mt-3 ps-0 mr-3">
+  <div class="ingredient-form">
+    <%= form_with model: @ingredient, url: analyze_image_ingredients_path, method: :post, html: { multipart: true, id: 'ingredient-form' } do |form| %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div class="download-picture">
+      <%= form.label :photo, "Télécharger votre frigo", class: "add-fridge" %>
+    </div>
+      <br>
+
+      <%= form.file_field :photo, accept: 'image/jpeg,image/jpg' %>
+  </div>
+  <br>
+  <div class="button-analyser">
+    <%= form.submit "Récupérez vos ingrédients", class: "submit-button" %>
+  </div>
+    <% end %>
+</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
