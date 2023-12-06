@@ -1,41 +1,44 @@
 
 
-<div class="main-container mt-4" data-controller="loader">
+<div class="index-container" data-controller="loader">
   <div class="header-titre-subtitre">
-    <div class = "titre-carrotte-frigo">
-      <%= image_tag("logo.png", class: "petite-carrote") %>
+    <div class = "titre-carrotte-frigo pt-4">
+      <%= image_tag("carrot-logo.png", class: "petite-carrote") %>
       <h1 class="title-frigo">FRIGO</h1>
     </div>
 
     <div class="instruction">
-      <p class="m-0"> Oh ! Votre frigo est bien rempli !</p>
+      <p class="p-2"> Oh ! Votre frigo est bien rempli !</p>
     </div>
   </div>
 
-    <div class="boutons-rajouter-generer mx-4 my-3">
+    <div class="">
     <!-- Button trigger modal -->
-    <button type="button" class="boutons-frigo1 p-0 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%# <button type="button" class="btn-patate" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Générer une recette
-    </button>
+    </button> %>
+
+    <%= link_to "Générer une recette", recipes_path, class: "btn-patate", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
 
 
-    <div class="button-create-recipe ms-1">
-      <%= link_to "Ajouter un produit", new_ingredient_path, id:"boutons-frigo2"%>
+
+    <div class="">
+      <%= link_to "Ajouter un produit", new_ingredient_path, class:"btn-patate"%>
     </div>
   </div>
 
     <%# START SEARCH--------------------- %>
-  <div class="search-bar-group mb-2">
+  <div class="search-bar-group ps-4">
     <%# <div class="d-flex noidea"> %>
-      <div class="search-bar my-2">
+      <div class="search-bar py-2">
         <%= form_with url: ingredients_path, method: :get, class: "form d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
                 placeholder: "Chercher un ingrédient..."
           %>
-              <button type="submit" class="btn-search">
               <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <button type="submit" class="btn-search">
 
         <% end %>
       </div>
@@ -57,12 +60,18 @@
               <div class="content row ingredient-infos mx-0 p-0">
                 <div class="d-flex align-items-center justify-content-between mx-0">
                   <h2 class="title_layout mb-0" id="number-quantity2"><%= ingredient.name %></h2>
-                  <button class="delete_button" onclick="deleteIngredient(<%= ingredient.id %>)">
-                  <i class="fa-solid fa-trash-can poubelle"></i>
-                  </button>
+                  <div class="destroy">
+                    <%= link_to "", ingredient_path(ingredient), data: {turbo_method: :delete, turbo_confirm: "Sur de vouloir supprimer cette recette ?"}, class:"fa-solid fa-trash-can poubelle" %>
+                  </div>
+
                 </div>
-              <h3 class="time_layout">Ajouté il y a : 15 jours <%= ingredient.purchase_date %></h3>
+
+              <h3 class="time_layout">Dans le frigo depuis :
+                <br>
+                <%= (((Time.now - ingredient.created_at) / 1.day).round) %> jours
+              </h3>
               <div class="d-flex align-items-center justify-content-start ">
+
                 <button class="plus_button pl-2" onclick="decrementQuantity(<%= ingredient.id %>)"> - </button>
                   <p class="mb-0 mx-2" id="number-quantity<%= ingredient.id %>"><%= ingredient.quantity %></p>
                 <button class="plus_button" onclick="incrementQuantity(<%= ingredient.id %>)"> + </button>
@@ -83,7 +92,17 @@
       </div>
 
       <div class="message content hidden">
-        <p> On cherche de délicieuses recettes ... </p>
+        <h1 class="p-5 text-center"> On cherche de délicieuses recettes ...</h1>
+        <%# <h1 class="modal-content"> de délicieuses </h1>
+        <h1 class="modal-content"> recettes ... </h1> %>
+
+        <div class="logo">
+          <div class="rotating" style="width: 100px; height: 100px; line-height: 100px; text-align: center;">
+          <%= image_tag("carrot-logo.png", class: "image-logo") %>
+          </div>
+        </div>
+
+
       </div>
   </div>
 
@@ -96,24 +115,25 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content bg-warning-subtle">
+
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"> <strong> Personnaliser ma recette </strong></h1>
+          <h1 class="modal-title" id="exampleModalLabel"> <strong> Personnaliser ma recette </strong></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body">
           <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="little-btn" data-bs-dismiss="modal">Fermer</button>
         </div>
+
       </div>
     </div>
 
 
   </div>
-
-
 
 </div>
 

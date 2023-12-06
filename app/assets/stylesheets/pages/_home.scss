@@ -89,9 +89,9 @@ body {
   margin-bottom: 10px;
 }
 
-.fixed-bottom {
-  margin-bottom: 30px;
-}
+// .fixed-bottom {
+//   margin-bottom: 30px;
+// }
 
 .main-container {
   height: 100%;
@@ -103,4 +103,53 @@ body {
 
 .session {
   height: 100%;
+}
+
+
+//////////////////////
+///
+
+.bg-home {
+  height: 100dvh;
+  background-image: url("bg-home.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.fixed-bottom {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 60px;
+}
+
+.btn-patate {
+  padding: 35px 30px;
+  text-decoration: none;
+  color: $light;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  &:hover {
+    color: $light;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("btn.png");
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &:last-child::before {
+    transform: rotate(180deg);
+  }
 }

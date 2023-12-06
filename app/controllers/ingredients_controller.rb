@@ -7,6 +7,8 @@ class IngredientsController < ApplicationController
     if params[:query].present?
       @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
     end
+    # date_ajout_calcul()
+
   end
 
   def show
@@ -59,6 +61,21 @@ class IngredientsController < ApplicationController
 
   def results
   end
+
+  def destroy
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.destroy
+    redirect_to ingredients_path
+  end
+
+  # def date_ajout_calcul(ingredient)
+  #   ingredient = Ingredient.find(params[:id])
+  #   current_time = Time.now
+  #   created_at = @ingredient.created_at
+  #   difference_in_seconds = current_time - created_at
+  #   difference_in_days = difference_in_seconds / 1.day
+  #   @rounded_difference_in_days = difference_in_days.round
+  # end
 
   private
 

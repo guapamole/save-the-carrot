@@ -102,18 +102,17 @@ input::placeholder {
 }
 
 .quantity-increment {
-  border: none;
-  display: flex;
-  padding-top: 30px;
   width: 75px;
   height: 75px;
-  border-radius: 16px;
+  border-radius: 50px;
   flex-shrink: 0;
-  background-color: #FFF8F0;
+  // background-color: #FFF8F0;
   text-align: center;
   font-family: Manrope;
-  font-weight: 800;
+  font-weight: bold;
   word-wrap: break-word;
+  font-size: 47px;
+
 }
 
 .quantity-increment img {
@@ -157,16 +156,16 @@ input::placeholder {
 
 .submit-button {
   flex-shrink: 0;
-  background-color: rgba(251, 221, 186, 0.95);
+  background-color: #FFF8F0;
   font-family: Manrope;
   margin-top: 20px;
   text-decoration: none;
-  color: black;
+  color: white;
   border-top-right-radius: 40px;
   border-top-left-radius: 90px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 90px;
-  width: 332px; /* Ajustez la largeur souhaitée */
+  width: 305px; /* Ajustez la largeur souhaitée */
   display: inline-block; /* Pour permettre le réglage de la largeur */
   text-align: center; /* Pour centrer le texte horizontalement */
   box-sizing: border-box; /* Inclure le padding dans la largeur totale */
@@ -187,8 +186,8 @@ input::placeholder {
   top: 0px;
   position: absolute;
   z-index: 1500;
-  width: 110vw;
-  height: 105vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   /* align-content: space-between; */
@@ -196,3 +195,21 @@ input::placeholder {
   align-items: center;
   font-weight: 900;
 }
+
+.submit-button button {
+  text-decoration: none;
+  border: none;
+  background-color: white;
+}
+
+
+// width: 75px;
+// height: 75px;
+// border-radius: 50px;
+// flex-shrink: 0;
+// // background-color: #FFF8F0;
+// text-align: center;
+// font-family: Manrope;
+// font-weight: bold;
+// word-wrap: break-word;
+// font-size: 47px;

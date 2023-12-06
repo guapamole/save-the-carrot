@@ -25,9 +25,10 @@
     }
     </style>
 
+
     <%= yield %>
 
-  <% unless current_page?(root_path)  || current_page?(new_user_session_path) || current_page?(new_user_registration_path)%>
+  <% unless current_page?(root_path)  || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(dashboard_path)%>
     <%= render "shared/footer", class:""%>
   <% end %>
 
