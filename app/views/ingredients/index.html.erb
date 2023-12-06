@@ -37,7 +37,7 @@
                 class: "form-control",
                 placeholder: "Chercher un ingrédient..."
           %>
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
               <button type="submit" class="btn-search">
 
         <% end %>
@@ -70,7 +70,7 @@
                 <br>
                 <%= (((Time.now - ingredient.created_at) / 1.day).round) %> jours
               </h3>
-              <div class="d-flex align-items-center justify-content-start ">
+              <div class="d-flex align-items-center justify-content-start pb-2">
 
                 <button class="plus_button pl-2" onclick="decrementQuantity(<%= ingredient.id %>)"> - </button>
                   <p class="mb-0 mx-2" id="number-quantity<%= ingredient.id %>"><%= ingredient.quantity %></p>

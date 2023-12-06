@@ -27,7 +27,7 @@
 
           <div class="content row ingredient-infos mx-0">
             <%= link_to recipe_path(recipe), style: 'color: inherit; text-decoration: none;' do %>
-              <h2 class="recipe-link mb-0"><%= recipe.name %></h2>
+              <h2 class="recipe-link mb-0 mt-0 pb-2"><%= recipe.name %></h2>
             <% end %>
 
             <div class="difficulty">
@@ -72,7 +72,7 @@
               <% end %>
             </div>
 
-            <h3 class="mb-0"><i class="fa-solid fa-clock"></i><%= recipe.preptime.hour unless recipe.preptime.nil?  %>
+            <h3 class="mb-0 pt-2 pb-2"><i class="fa-solid fa-clock"></i><%= recipe.preptime.hour unless recipe.preptime.nil?  %>
             minutes</h3>
           </div>
 
