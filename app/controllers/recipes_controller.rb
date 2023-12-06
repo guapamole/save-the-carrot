@@ -23,13 +23,12 @@ class RecipesController < ApplicationController
     @recipe.content = params[:content]
     @recipe.ingredients = params[:ingredients]
     file = params[:img]
-    @recipe.image_url = @recipe.photo.attach(io: URI.open(file), filename:"image.jpg", content_type: "image/jpg")
+    @recipe.photo.attach(io: URI.open(file), filename:"image.jpg", content_type: "image/jpg")
     @recipe.cookbook = current_user.cookbooks.first
 
     if @recipe.save
       redirect_to cookbook_path(current_user.cookbooks.first)
     end
-
   end
 
   def show
