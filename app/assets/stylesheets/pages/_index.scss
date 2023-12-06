@@ -102,14 +102,16 @@
 // }
 
 
-// .modal-content {
-//   height: 100dvh;
-//   background-image: url("bg-pastel.png");
-//   background-size: cover;
-//   background-position: center;
-//   z-index: -100;
-//   border: none;
-// }
+
+.bg-content {
+  height: 100dvh;
+  background-image: url("bg-pastel.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -100;
+  border: none;
+}
+
 
 .modal-body {
   border: none;
