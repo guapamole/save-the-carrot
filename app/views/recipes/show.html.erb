@@ -14,7 +14,7 @@ body {
       <div class="col mt-4 bloc-quick-infos">
         <div class="image-recipe">
         <%# ------Modifier image %>
-          <%= image_tag("plat.jpeg", class:"image-recette")%>
+          <%= cl_image_tag(@recipe.photo.key, class: "plat-image") %>
         </div>
 
         <div class="quick-infos">
