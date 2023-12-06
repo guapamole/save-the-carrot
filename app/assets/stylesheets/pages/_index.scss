@@ -19,7 +19,8 @@
 
 .header-titre-subtitre {
   width: 100%;
-  margin-left: 55px;
+  padding: 0 20px;
+  // margin-left: 55px;
 }
 
 // .main_btn {
@@ -40,6 +41,7 @@
 .petite-carrote{
   width: 28px;
   height: 30px;
+  transform: rotate(90deg)
 }
 
 .button-create-recipe{
@@ -101,18 +103,25 @@
 
 
 .modal-content {
-  background-color: #FBDDBA;
-  border-radius: 10px;
-  border: solid #F28E19;
+  height: 100dvh;
+  background-image: url("bg-pastel.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -100;
+  border: none;
+}
+
+.modal-body {
+  border: none;
 }
 
 
 .modal-title h1 {
   color: #000;
   font-family: Manrope;
-  font-size: 15px;
+  font-size: 25px;
   font-style: bold;
-  font-weight: 100;
+  font-weight: 900;
 
 }
 
@@ -120,7 +129,8 @@
 .filter-content {
   color: #000;
   font-family: Manrope;
-  font-size: 15px;
+  font-size: 20px;
+  border: none;
 
 }
 
@@ -246,7 +256,7 @@
 
 .fa-heart:active {
   color: red;
-  transition: color 1s ease-out;
+  transition: color 2s ease-out;
 }
 
 .search-bar-group {
@@ -288,5 +298,65 @@ input::placeholder {
   background: none;
   cursor: pointer;
 
+}
+
+
+.modal-content h1 {
+  color: #000000;
+  font-family: Manrope;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+
+.btn-patate {
+  padding: 35px 30px;
+  text-decoration: none;
+  color: $light;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  &:hover {
+    color: $light;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("btn.png");
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &:last-child::before {
+    transform: rotate(180deg);
+  }
+}
+
+.index-container {
+    height: 140dvh;
+    background-image: url("bg-pastel.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
+}
+
+
+@keyframes rotating {
+from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+.rotating {
+ animation: rotating 2s linear infinite;
 }
 

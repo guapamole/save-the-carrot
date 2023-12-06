@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    # @cookbook = current_user.cookbook
+    # @ingredients
+  end
 end

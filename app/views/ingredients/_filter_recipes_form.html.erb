@@ -1,13 +1,13 @@
 
-<div class="container filter-content">
-  <p><strong>Qu'est-ce qu'on cuisine aujourd'hui ? </strong></p>
+<div class="modal-body filter-content">
+  <p class="filter"><strong>Qu'est-ce qu'on cuisine aujourd'hui ? </strong></p>
     <div class="filter-recipe-form">
       <%= simple_form_for :choices, url: generate_recipes_recipes_path, method: :get, html: { data: { loader_target: "form", action: "submit->loader#displayLoader "} } do |f| %>
 
       <div data-controller="quantity">
 
           <div class="quantity-input row align-items">
-              <%= f.input :quantity, as: :numeric, class: "col" , input_html: { value: 1, data: { quantity_target: "nombre" } }, label: "On est combien ?" %>
+              <%= f.input :quantity, as: :numeric, class: "col number" , input_html: { value: 1, data: { quantity_target: "nombre" } }, label: "On est combien ?" %>
             <div class="qty_button">
               <button class="title_button col-1" type="button" data-action="click->quantity#decrement">-</button>
               <button class="title_button col-1" type="button" data-action="click->quantity#increment">+</button>
@@ -23,7 +23,7 @@
         </div>
 
 
-        <%= f.submit "Trouve moi des recettes !", class: "main_btn"%>
+        <%= f.submit "Trouve moi des recettes !", class: "btn-patate"%>
       <% end %>
 
 
