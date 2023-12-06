@@ -21,20 +21,31 @@ export default class extends Controller {
     });
   }
 
-  addResultsToContainer(results) {
-    const container = document.getElementById('results-container');
+  validateButtonClick() {
+    this.addResultsToContainer(this.resultsData)
+      .then(() => {
+        window.location.href = "/ingredients";
+      })
+      .catch((error) => {
 
-    if (Array.isArray(results)) {
-      results.forEach((item) => {
-        const resultElement = document.createElement('p');
-        resultElement.textContent = `${item.name}`;
-        container.appendChild(resultElement);
+        console.error(error);
       });
-    }
   }
 
-  validateButtonClick() {
-    this.addResultsToContainer(this.resultsData);
-    window.location.href = "/ingredients";
+  addResultsToContainer(results) {
+    return new Promise((resolve, reject) => {
+      const container = document.getElementById('results-container');
+
+      if (Array.isArray(results)) {
+        if (results.length > 0) {
+          results.forEach((item) => {
+            const resultElement = document.createElement('p');
+            resultElement.textContent = `${item.name}`;
+            container.appendChild(resultElement);
+          });
+
+          resolve();
+        }
+    });
   }
 }
