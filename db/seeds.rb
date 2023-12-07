@@ -11,7 +11,9 @@ Recipe.destroy_all
 Cookbook.destroy_all
 User.destroy_all
 
-user = User.create(email: "savethecarotts@rabbit.com", password: "coucou")
+user =
+User.create(email: "savethecarotts@rabbit.com", password: "coucou")
+User.create(email: "hello@lapin.com", password: "coucou")
 
 Ingredient.create(name: "carotte", user: user, quantity: 2)
 Ingredient.create(name: "steack haché", user: user, quantity: 5)
