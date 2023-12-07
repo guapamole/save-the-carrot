@@ -6,3 +6,17 @@
   font-weight: 800;
   line-height: normal;
 }
+
+
+.ingredient-card {
+  width: 290px;
+  background-color: red;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 58px;
+  align-content: center;
+  align-items: center;
+  text-decoration: none;
+}
