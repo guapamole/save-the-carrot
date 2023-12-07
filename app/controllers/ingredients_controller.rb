@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
     if params[:query].present?
       @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
     end
-    # date_ajout_calcul()
+
 
   end
 
