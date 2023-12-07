@@ -17,6 +17,10 @@
     </div>
   </div>
 </div> %>
+    <div class="instruction">
+      <p class="m-0 mb-3"> Voici quelques idées de recettes...</p>
+    </div>
+  </div>
 
 <% recipes["recipes"].each do |recipe| %>
   <div class="col-12 col-sm-6 col-md-4">
@@ -81,7 +85,7 @@
 
             </div>
         </div>
-        
+
               <div class="like">
                 <%= link_to "", recipes_path(@recipe, recipe), data: { turbo_method: :post }, class:"fa-solid fa-heart" %>
               </div>
@@ -90,3 +94,5 @@
     </div>
   </div>
 <% end %>
+
+<%# Spinner --------------------------- %>
