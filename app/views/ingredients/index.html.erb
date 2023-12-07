@@ -31,14 +31,15 @@
   <div class="search-bar-group ps-4">
     <%# <div class="d-flex noidea"> %>
       <div class="search-bar py-2">
-        <%= form_with url: ingredients_path, method: :get, class: "form d-flex" do %>
+        <%= form_with url: ingredients_path, method: :get, class: "form-search d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
                 placeholder: "Chercher un ingrédient..."
-          %>
 
-              <button type="submit" class="btn-search">
+          %>
+              <%# <i class="fa-solid fa-magnifying-glass"></i> %>
+              <button type="submit" class="btn-search fa-solid fa-magnifying-glass">
 
         <% end %>
       </div>
@@ -71,7 +72,7 @@
 
               <h3 class="time_layout">Dans le frigo depuis :
                 <br>
-                <%= (((Time.now - ingredient.created_at) / 1.day).round) %> jours
+                <%=  (((Time.now - ingredient.created_at) / 1.day).round) == 0? "aujourd'hui" : (((Time.now - ingredient.created_at) / 1.day).round)  %>
               </h3>
               <div class="d-flex align-items-center justify-content-start pb-2">
 
