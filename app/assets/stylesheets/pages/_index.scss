@@ -104,7 +104,7 @@
 
 
 .bg-content {
-  height: 100dvh;
+  height: 200dvh;
   background-image: url("bg-pastel.png");
   background-size: cover;
   background-position: center;
@@ -395,7 +395,8 @@ from {
 
 
 .add-photo-btn {
-  border: none; 
+  border: none;
+}
 
 .form-search {
   width: 100%;
@@ -424,5 +425,4 @@ from {
   padding-bottom: 12px;
   width: 179px;
   position: relative;
-
 }

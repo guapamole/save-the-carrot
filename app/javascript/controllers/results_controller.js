@@ -19,8 +19,7 @@ export default class extends Controller {
   }
 
   validateButtonClick() {
-    this.addResultsToIngredients(this.resultsData);
-    // window.location.href = "/ingredients";
+    window.location.href = "/ingredients";
   }
 
   async add(evt) {

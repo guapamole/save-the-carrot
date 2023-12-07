@@ -31,15 +31,14 @@
   <div class="search-bar-group ps-4">
     <%# <div class="d-flex noidea"> %>
       <div class="search-bar py-2">
-        <%= form_with url: ingredients_path, method: :get, class: "form-search d-flex" do %>
+        <%= form_with url: ingredients_path, method: :get, class: "form d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
                 placeholder: "Chercher un ingrédient..."
-
           %>
-              <%# <i class="fa-solid fa-magnifying-glass"></i> %>
-              <button type="submit" class="btn-search fa-solid fa-magnifying-glass">
+
+              <button type="submit" class="btn-search">
 
         <% end %>
       </div>
@@ -72,7 +71,7 @@
 
               <h3 class="time_layout">Dans le frigo depuis :
                 <br>
-                <%=  (((Time.now - ingredient.created_at) / 1.day).round) == 0? "aujourd'hui" : (((Time.now - ingredient.created_at) / 1.day).round)  %>
+                <%= (((Time.now - ingredient.created_at) / 1.day).round) %> jours
               </h3>
               <div class="d-flex align-items-center justify-content-start pb-2">
 
@@ -116,8 +115,8 @@
 
 
   <!-- Modal filtres-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="pointer-events:none;">
-    <div class="modal-dialog" style="pointer-events:auto;">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="bg-content bg-warning-subtle">
 
         <div class="modal-header">
@@ -136,10 +135,12 @@
       </div>
     </div>
 
+
   </div>
+
 </div>
 
-<%# <script>
+<script>
   function incrementQuantity(ingredientId) {
     let quantityElement = document.getElementById("number-quantity" + ingredientId);
     let newQuantity = parseInt(quantityElement.innerText) + 1;
@@ -162,4 +163,4 @@
     let cardElement = document.getElementById("ingredient-card" + ingredientId);
     cardElement.remove();
   }
-</script> %>
+</script>
