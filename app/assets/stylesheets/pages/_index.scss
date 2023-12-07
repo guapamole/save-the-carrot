@@ -290,7 +290,7 @@ input::placeholder {
   position: relative;
   text-align: center;
   &:hover {
-    color: $light;
+    color: #f1cea7;;
   }
   &::before {
     content: "";
@@ -352,7 +352,7 @@ from {
 
 
   &:hover {
-    color: $light;
+    color: #f1cea7;
   }
 
   border: none;
