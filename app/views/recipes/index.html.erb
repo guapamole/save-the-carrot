@@ -8,14 +8,35 @@
       <h1 class="title-frigo ps-0">IDÉES DE RECETTES</h1>
     </div>
 
-    <div class="instruction">
-      <p class="m-0 mb-3"> Voici quelques idées de recettes...</p>
-    </div>
-  </div>
-
 
   <div class="container">
     <div class="row" data-recipes-target="content">
+
+<%# spinner --------------- %>
+
+
+     <div class="loader-overlay" data-loader-target="loader">
+      <div class="overlay" onclick="showSpinner()">
+        <%# <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div> %>
+      </div>
+
+      <div class="message content hidden">
+        <h1 class="p-5 text-center loader-text"> On cherche de délicieuses recettes ...</h1>
+
+        <div class="logo">
+          <div class="rotating" style="width: 100px; height: 100px; line-height: 100px; text-align: center;">
+          <%= image_tag("carrot-logo.png", class: "image-logo") %>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<%# fin spinner ------------------ %>
+
+
+      </div>
     </div>
   </div>
 </div>
