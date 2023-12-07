@@ -14,27 +14,29 @@ export default class extends Controller {
     });
   }
 
-  _handleData(data) {
-    this.resultsData = data;
-    data.forEach((item) => {
-      this.element.insertAdjacentHTML("beforeend", `${item.name}<br>`);
-    });
+  _handleData(html) {
+    document.querySelector('#results-container').innerHTML = html;
   }
 
-    validateButtonClick() {
-      this.addResultsToContainer(this.resultsData);
-      window.location.href = "/ingredients";
-    }
+  validateButtonClick() {
+    this.addResultsToIngredients(this.resultsData);
+    // window.location.href = "/ingredients";
+  }
 
-  addResultsToContainer(results) {
-    const container = document.getElementById('results-container');
+  async add(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
 
-    if (Array.isArray(results)) {
-      results.forEach((item) => {
-        const resultElement = document.createElement("p");
-        resultElement.textContent = "${item.name}";
-        container.appendChild(resultElement);
-      });
-    }
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector("meta[name='csrf-token']").content
+      }
+    };
+
+    const response = await fetch(`/ingredients/add?ingredient_name=${evt.params.ingredientName}`, options);
+    const data = await response.json();
+    console.log(data)
   }
 }

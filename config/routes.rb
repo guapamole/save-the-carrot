@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:index, :new, :create, :edit, :update] do
     get "add_an_image", on: :collection
     post "analyze_image", on: :collection
+    post "add", on: :collection
     post "recipe_done", on: :member
   end
 

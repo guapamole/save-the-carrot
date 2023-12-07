@@ -68,6 +68,13 @@ class IngredientsController < ApplicationController
     redirect_to ingredients_path
   end
 
+  def add
+    ingredient_name = params[:ingredient_name]
+    Ingredient.create(name: ingredient_name, user: current_user)
+
+    render json: { status: :ok, quantity: current_user.ingredients.where(name: ingredient_name).count }
+  end
+
   # def date_ajout_calcul(ingredient)
   #   ingredient = Ingredient.find(params[:id])
   #   current_time = Time.now
