@@ -8,27 +8,19 @@
   </div>
     <br>
   <div class=" pic-form flex- pe-0 mt-3 ps-0 mr-3">
-    <form class="pic-form" enctype="multipart/form-data" action="/ingredients/analyze_image" accept-charset="UTF-8" method="post" style="
-      background-color: rgba(251, 221, 186, 0.95);
-      border-radius: 16px;
-      margin-left: 15px;
-      margin-right: 15px;
-      padding: 25px;
-      font-family: 'Manrope';
-      font-weight: 900;
-      "><input type="hidden" name="authenticity_token" value="CekN66JVOoqsczDYCgkWuGUzuVdF4xMsHvnHQmGYy2jQfv_AHroWriSNSBgAmpHl4JU3dE3LJa7kFKhYOWJeOA" autocomplete="off">
-      <%= form_with model: @ingredient, url: analyze_image_ingredients_path, method: :post, html: { multipart: true, class: 'pic-form' } do |form| %>
+    <%= form_with model: @ingredient, url: analyze_image_ingredients_path, method: :post, html: { multipart: true, class: 'pic-form' } do |form| %>
 
       <div class="download-picture pb-3">
         <%= form.label :photo, "Prenez votre frigo en photo !", class: "add-fridge" %>
       </div>
 
       <%= form.file_field :photo, accept: 'image/jpeg,image/jpg' %>
-    </form>
+
+      <br>
+
+      <div class="button-analyser">
+        <%= form.submit "Scannez le frigo", class: "btn-patate-forme mt-4" %>
+      </div>
+    <% end %>
   </div>
-    <br>
-    <div class="button-analyser">
-      <%= form.submit "Scannez le frigo", class: "btn-patate-forme mt-4" %>
-    </div>
-      <% end %>
 </div>
