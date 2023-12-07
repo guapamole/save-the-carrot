@@ -1,7 +1,10 @@
 .footer {
-  background-color: $orange;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  // background-color: $orange;
+  // border-top-left-radius: 30px;
+  // border-top-right-radius: 30px;
+  background-image: url("footer-patate.png");
+  background-size: 150%;
+  background-position: center top;
   width: 100%;
   z-index: 5;
   position: fixed;
@@ -18,7 +21,8 @@
   height: auto;
   margin-left: 35px;
   margin-right: 35px;
-  padding-top: 7px;
+  padding-top: 37px;
+  padding-bottom: 35px;
 }
 
 .icons-footer img {
