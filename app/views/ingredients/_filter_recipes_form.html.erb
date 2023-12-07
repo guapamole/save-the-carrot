@@ -8,10 +8,10 @@
 
           <div class="quantity-input row align-items">
               <%= f.input :quantity, as: :numeric, class: "col number" , input_html: { value: 1, data: { quantity_target: "nombre" } }, label: "On est combien ?" %>
-            <div class="qty_button">
+            <%# <div class="qty_button">
               <button class="title_button col-1" type="button" data-action="click->quantity#decrement">-</button>
               <button class="title_button col-1" type="button" data-action="click->quantity#increment">+</button>
-            </div>
+            </div> %>
           </div>
 
         <div>
