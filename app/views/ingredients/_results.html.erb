@@ -1,4 +1,3 @@
-
 <% ingredients.each do |ingredient| %>
 
     <%# <div class="ingredient-card">
@@ -10,11 +9,12 @@
 
 
 
-<div class="card text-center bg-light-subtle rounded-4 mb-3 border border-0" style="width: 18rem;">
+<div class="card-design" style="card-design">
   <div class="card-body">
-     <h2 class="generation_title fw-semibold"><%= ingredient["name"] %></h2>
+    <%= image_tag("marmite.png", class: "vegetable") %>
+    <p class="generation_title fw-semibold"><%= ingredient["name"] %></p>
 
-    <%= link_to "Ajouter", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] } %>
+    <%= link_to "", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] }, class:"fa-solid fa-plus"%>
   </div>
 </div>
 
