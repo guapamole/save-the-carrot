@@ -31,6 +31,8 @@
   height: 54px;
 }
 
+
+
 .button-create-recipe{
   display: flex;
   align-items: center;
@@ -220,15 +222,11 @@
 .fa-heart {
   color: #F28E19;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 22px;
   justify-content: space-between;
   text-decoration: none;
 }
 
-.fa-heart:active {
-  color: red;
-  // transition: color 2s ease-out;
-}
 
 .search-bar-group {
   width: 366px;
@@ -376,15 +374,16 @@ from {
 }
 
 .like {
+  color: #F28E19;
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
   text-decoration: none;
-  transition: color 5s ease-out;
+
 }
 
-.like:active {
+.like:hover {
   color: rgb(197, 197, 197);
 }
 
