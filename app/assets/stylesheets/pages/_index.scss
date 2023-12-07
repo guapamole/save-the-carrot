@@ -39,9 +39,9 @@
 
 
 .petite-carrote{
-  width: 28px;
-  height: 30px;
-  transform: rotate(90deg)
+  width: 54px;
+  transform: rotate(90deg);
+  height: 54px;
 }
 
 .button-create-recipe{
@@ -113,10 +113,14 @@
 }
 
 
-// .modal-body {
-//   border: none;
-// }
+.modal-body {
+  border: none;
+}
 
+.modal-title {
+  font-family: 'Darumadrop One', sans-serif;
+  font-size: 40px;
+}
 
 .modal-title h1 {
   color: #000;
@@ -426,4 +430,12 @@ from {
   width: 179px;
   position: relative;
 
+}
+
+.modal-footer{
+  border: none;
+}
+
+.modal-header {
+  border: none;
 }
