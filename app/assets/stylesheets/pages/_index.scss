@@ -3,8 +3,8 @@
 
 .title-frigo {
   color: #000;
-  font-family: Manrope;
-  font-size: 30px;
+  font-family: "Darumadrop One";
+  font-size: 40px;
   font-style: normal;
   font-weight: 800;
   align-items: start;
@@ -113,9 +113,9 @@
 }
 
 
-.modal-body {
-  border: none;
-}
+// .modal-body {
+//   border: none;
+// }
 
 
 .modal-title h1 {
@@ -181,7 +181,7 @@
   // width: 50%;
 
   flex-shrink: 0;
-  background-color: #F28E19;;
+  background-color: #F28E19;
   font-family: Manrope;
   margin-top: 20px;
   text-decoration: none;
@@ -222,7 +222,7 @@
   // width: 50%;
 
   flex-shrink: 0;
-  background-color: #F28E19;;
+  background-color: #F28E19;
   font-family: Manrope;
   margin-top: 20px;
   text-decoration: none;
@@ -250,19 +250,20 @@
 }
 
 .fa-heart {
-  color: rgb(167, 167, 167);
+  color: #F28E19;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 30px;
   justify-content: space-between;
+  text-decoration: none;
 }
 
 .fa-heart:active {
   color: red;
-  transition: color 2s ease-out;
+  // transition: color 2s ease-out;
 }
 
 .search-bar-group {
-  width: 339px;
+  width: 366px;
   display: flex;
   justify-content: center;
 }
@@ -284,9 +285,11 @@ color: black;
 
 .fa-magnifying-glass {
   font-size: 25px;
-  margin-top: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   margin-left: 10px;
-  color: #DFDFDF;
+  color: #F28E19;
+
 
 }
 
@@ -388,4 +391,38 @@ from {
 
   border: none;
   background-color: transparent
+}
+
+
+.add-photo-btn {
+  border: none; 
+
+.form-search {
+  width: 100%;
+  border-radius: 30%;
+}
+
+.form-control {
+  border-radius: 30%;
+}
+
+.like {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  text-decoration: none;
+  transition: color 5s ease-out;
+}
+
+.like:active {
+  color: rgb(197, 197, 197);
+}
+
+.recipe-gpt-infos {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 179px;
+  position: relative;
+
 }

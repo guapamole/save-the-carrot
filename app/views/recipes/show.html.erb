@@ -7,19 +7,19 @@ body {
 </style>
 
 
-  <div class="header-recipe-show">
-<div class="py-2 mx-3">
+<div class="header-recipe-show">
+  <div class="py-2 mx-3">
 
     <div class="row">
       <div class="col mt-4 bloc-quick-infos">
         <div class="image-recipe">
-        <%# ------Modifier image %>
-          <%= image_tag("plat.jpeg", class:"image-recette")%>
+
+          <%= cl_image_tag(@recipe.photo.key, class: "plat-image") %>
         </div>
 
         <div class="quick-infos">
           <div class="preparation-card  mb-3">
-          <%# ----------------Rajouter temps  %>
+          
             <p class= "mb-0">Preparation :</p>
             <p class = "mb-0"><i class="fa-solid fa-clock"></i><%= @recipe.preptime.hour unless @recipe.preptime.nil?  %> min</p>
           </div>
@@ -75,8 +75,8 @@ body {
         </div>
       </div>
     </div>
-</div>
   </div>
+</div>
 
 
 <div class="card-details-recette">

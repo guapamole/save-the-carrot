@@ -1,11 +1,32 @@
+<%# <div class="bg-content pt-4" data-controller="recipes">
+
+  <div class="header-titre-subtitre">
+    <div class = "titre-carrotte-frigo"> %>
+      <%#= image_tag("carrot-logo.png", class: "petite-carrote") %>
+      <%# <h1 class="title-frigo">IDÉES DE RECETTES</h1>
+    </div>
+
+    <div class="instruction">
+      <p class="m-0 mb-3"> Voici quelques idées de recettes...</p>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row" data-recipes-target="content">
+    </div>
+  </div>
+</div> %>
+
 <% recipes["recipes"].each do |recipe| %>
   <div class="col-12 col-sm-6 col-md-4">
     <div class="card_design me-0 px-2">
       <div class="image-plat">
         <%= image_tag(recipe["img"], class: "plat-image") %>
       </div>
-        <div class="content row ingredient-infos">
-          <div class="d-flex">
+        <div class="content row ingredient-infos ">
+          <%# <div class="d-flex"> %>
+
             <div class="infos-recette">
               <h3 class="title_layout_recipes mb-0" id="number-quantity2"><%= recipe["name"] %>
               </h3>
@@ -59,13 +80,13 @@
 
 
             </div>
-            <div class="like">
-            <%= link_to "", recipes_path(@recipe, recipe), data: { turbo_method: :post }, class:"fa-solid fa-heart" %>
-            </div>
-          </div>
         </div>
+        
+              <div class="like">
+                <%= link_to "", recipes_path(@recipe, recipe), data: { turbo_method: :post }, class:"fa-solid fa-heart" %>
+              </div>
+          <%# </div> %>
 
     </div>
   </div>
 <% end %>
-
