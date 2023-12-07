@@ -4,7 +4,7 @@
   <div class="header-titre-subtitre">
     <div class = "titre-carrotte-frigo pt-4">
       <%= image_tag("carrot-logo.png", class: "petite-carrote") %>
-      <h1 class="title-frigo">FRIGO</h1>
+      <h1 class="title-frigo ps-0">FRIGO</h1>
     </div>
 
     <div class="instruction">
@@ -119,8 +119,8 @@
     <div class="modal-dialog">
       <div class="bg-content bg-warning-subtle">
 
-        <div class="modal-header">
-          <h1 class="modal-title" id="exampleModalLabel"> <strong> Personnaliser ma recette </strong></h1>
+        <div class="modal-header border-0">
+          <h1 class="modal-title" id="exampleModalLabel">  Personnaliser ma recette</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
@@ -128,7 +128,7 @@
           <%= render partial: 'filter_recipes_form', locals: { ingredients: @ingredients, recipes: @recipes } %>
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer border-0">
           <button type="button" class="little-btn" data-bs-dismiss="modal">Fermer</button>
         </div>
 

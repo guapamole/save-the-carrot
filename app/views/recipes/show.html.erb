@@ -1,115 +1,110 @@
+<div class="show-bg">
+  <div class="header-recipe-show">
+    <div class="header-content row py-2 mx-3">
 
-<style>
-body {
-  /* background-color : #F28E19; */
-  min-height: calc(100vh - 72px);
-}
-</style>
+      <%# <div class="row"> %>
+        <div class="col mt-4 bloc-quick-infos">
+          <div class="image-recipe">
 
-
-<div class="header-recipe-show">
-  <div class="py-2 mx-3">
-
-    <div class="row">
-      <div class="col mt-4 bloc-quick-infos">
-        <div class="image-recipe">
-
-          <%= cl_image_tag(@recipe.photo.key, class: "plat-image") %>
-        </div>
-
-        <div class="quick-infos">
-          <div class="preparation-card  mb-3">
-          
-            <p class= "mb-0">Preparation :</p>
-            <p class = "mb-0"><i class="fa-solid fa-clock"></i><%= @recipe.preptime.hour unless @recipe.preptime.nil?  %> min</p>
+            <%= cl_image_tag(@recipe.photo.key, class: "plat-image") %>
           </div>
 
+          <div class="quick-infos">
+            <div class="preparation-card  mb-3">
 
-          <div class="difficulte-card">
-            <p class= "mb-0">Difficulté :
-              <div class="difficulty">
-                <% case @recipe.difficulty%>
-                <% when 1 %>
-                <div class="div">
-                  <%= image_tag("star.png", class:"etoile") %>
+              <p class= "mb-0">Preparation :</p>
+              <p class = "mb-0"><i class="fa-solid fa-clock"></i><%= @recipe.preptime.hour unless @recipe.preptime.nil?  %> min</p>
+            </div>
+
+
+            <div class="difficulte-card">
+              <p class= "mb-0">Difficulté :
+                <div class="difficulty">
+                  <% case @recipe.difficulty%>
+                  <% when 1 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 2 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 3 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 4 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% when 5 %>
+                  <div class="div">
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                    <%= image_tag("star.png", class:"etoile") %>
+                  </div>
+
+                  <% else %>
+                    <p>Dificulté inconnue</p>
+                  <% end %>
                 </div>
 
-                <% when 2 %>
-                <div class="div">
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                </div>
 
-                <% when 3 %>
-                <div class="div">
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                </div>
-
-                <% when 4 %>
-                <div class="div">
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                </div>
-
-                <% when 5 %>
-                <div class="div">
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                  <%= image_tag("star.png", class:"etoile") %>
-                </div>
-
-                <% else %>
-                  <p>Dificulté inconnue</p>
-                <% end %>
-              </div>
-
-
-            </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 
-<div class="card-details-recette">
-<div class="container">
 
-  <div class="titre-details-recette text-center">
-    <h2 id="titre-details-recette-id" class ="my-3"><%= @recipe.name %></h2>
-  </div>
+  <div class="card-details-recette">
+    <div class="show-content-bg">
 
-  <div class="sub-titre-details-recette mb-3">
-    <h3 class="mb-0">Ingredients</h3>
-  </div>
-  <div class="liste-ingredients">
-    <ul class = "ps-0">
-      <% @recipe.ingredients.each do |ingredient| %>
-        <li><i class="fa-regular fa-square me-2"></i><%=ingredient%></li>
-      <% end  %>
-    </ul>
-  </div>
+      <div class="titre-details-recette text-center">
+        <h2 id="titre-details-recette-id" class ="fw-semibold h5 my-3"><%= @recipe.name %></h2>
+      </div>
 
-  <div class="sub-titre-details-recette mb-3">
-      <h3 class="mb-0">Instructions</h3>
-  </div>
-  <div class="instructions">
-    <p><%= @recipe.content %></p>
-  </div>
 
-  <div class="div-recipe-done">
-    <button class="button-recipe-done" data-action="click->end#displayCongrats" data-target="congrats.congrats">Recette realisée</button>
-  </div>
-<%#
-  <div class="message content hidden" data-end-target="end.congrats">
-    <p>BRAVO, recette terminée ! On enlève les ingrédients de votre frigo ...</p>
-  </div> %>
 
+
+      <div class="sub-titre-details-recette mb-1">
+        <h3 class="fw-semibold h5 mb-0">Ingrédients</h3>
+      </div>
+      <div class="liste-ingredients">
+        <ul class="">
+          <% @recipe.ingredients.each do |ingredient| %>
+            <li><%= image_tag("list-krot.png", class: "petite-carrote") %><%=ingredient%></li>
+          <% end  %>
+        </ul>
+      </div>
+
+      <div class="sub-titre-details-recette mb-3 ">
+          <h3 class="fw-semibold h5 mb-0">Instructions</h3>
+      </div>
+      <div class="instructions text-justify px-4">
+        <p><%= @recipe.content %></p>
+      </div>
+
+      <div class="div-recipe-done">
+        <%# <button class="button-recipe-done" data-action="click->end#displayCongrats" data-target="congrats.congrats">Recette realisée</button> %>
+        <h3> Bravo ! Tu as sauvé de bons ingrédients du gaspillage ! Bon appétit ! </h3>
+
+      </div>
+
+    </div>
+  </div>
 </div>
