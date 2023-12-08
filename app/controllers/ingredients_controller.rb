@@ -7,6 +7,7 @@ class IngredientsController < ApplicationController
     if params[:query].present?
       @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
     end
+  end
 
   def show
   end

@@ -57,8 +57,11 @@
             <div class="image-plat">
               <% if ingredient.photo.present? %>
                 <%= cl_image_tag ingredient.photo.key, class: "plat-image" %>
+              <% else %>
+                <%= image_tag(ingredient_img(ingredient["name"]), class: "vegetable") %>
               <% end %>
             </div>
+
 
               <div class="content row ingredient-infos mx-0 p-0">
                 <div class="d-flex align-items-center justify-content-between mx-0">
