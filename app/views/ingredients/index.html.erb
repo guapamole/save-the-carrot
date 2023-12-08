@@ -56,11 +56,11 @@
           <div class="card_design" id="ingredient-card<%= ingredient.id %>">
 
             <div class="image-plat">
-              <% if ingredient.photo.present? %>
-                <%= cl_image_tag ingredient.photo.key, class: "plat-image" %>
-              <% else %>
+              <%# if ingredient.photo.present? %>
+                <%#= cl_image_tag ingredient.photo.key, class: "plat-image" %>
+              <%# else %>
                 <%= image_tag(ingredient_img(ingredient["name"]), class: "vegetable") %>
-              <% end %>
+              <%# end %>
             </div>
 
 
