@@ -295,7 +295,7 @@ input::placeholder {
   position: relative;
   text-align: center;
   &:hover {
-    color: $light;
+    color: #f1cea7;;
   }
   &::before {
     content: "";
@@ -316,11 +316,12 @@ input::placeholder {
 }
 
 .index-container {
-    height: 140dvh;
+    // height: 140dvh;
     background-image: url("bg-pastel.png");
     background-size: cover;
     background-position: center;
     z-index: -100;
+    padding-bottom: 80px;
 }
 
 
@@ -357,7 +358,7 @@ from {
 
 
   &:hover {
-    color: $light;
+    color: #f1cea7;
   }
 
   border: none;
@@ -419,10 +420,10 @@ from {
 
 
 .fa-heart {
-  color: #F28E19;
+  color:#FFD4A2;;
 
 }
 
 .fa-heart:hover {
-  color: rgb(197, 197, 197);
+  color: #F28E19;
 }
