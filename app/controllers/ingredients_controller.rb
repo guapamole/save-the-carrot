@@ -8,9 +8,6 @@ class IngredientsController < ApplicationController
       @ingredients = @ingredients.where("name ILIKE ?", "%#{params[:query]}%")
     end
 
-
-  end
-
   def show
   end
 
@@ -60,6 +57,7 @@ class IngredientsController < ApplicationController
   end
 
   def results
+
   end
 
   def destroy

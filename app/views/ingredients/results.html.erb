@@ -9,38 +9,8 @@
       <p class="m-0"> Sélectionnez vos ingrédients !</p>
     </div>
 
-    <div id="results-container">
-      <%# spinner --------------- %>
-
-     <div class="loader-overlay" data-loader-target="loader">
-      <div class="overlay" onclick="showSpinner()">
-        <%# <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div> %>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="message content hidden">
-        <h1 class="p-5 text-center loader-text"> Scan de votre frigo en cours...</h1>
-      <br>
-      <br>
-        <div class="logo">
-          <div class="rotating" style="width: 100px; height: 100px; line-height: 100px; text-align: center;">
-          <%= image_tag("carrot-logo.png", class: "image-logo") %>
-          </div>
-        </div>
-      </div>
-  </div>
-
-<%# fin spinner ------------------ %>
- <button class="btn-patate-forme" id="validate-fridge-button">Valider mon frigo</button>    </div>
+    <div id="results-container"></div>
+    <button class="btn-patate-forme" id="validate-fridge-button">Valider mon frigo</button>
+    </div>
   </div>
 </div>

@@ -2,10 +2,10 @@
 <% ingredients.each do |ingredient| %>
   <div class="col-12 col-sm-6 col-md-4">
     <div class="card_design" id="ingredient-card">
-      <h2 class="title_layout pl-5"><%= ingredient["name"] %></h2>
+      <h2 class="title_layout pl-5"><%= ingredient["name"] %></h2>re
     </div>
     <div class="add-to-fridge-btn">
-      <%= link_to "Ajouter à mon frigo", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] } %>
+      <%= button_to "Ajouter à mon frigo", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] } %>
     </div>
   </div>
     <% end %>
