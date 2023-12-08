@@ -12,6 +12,20 @@
   position: relative;
 }
 
+.ingredients-generated-title {
+  display: flex;
+}
+
+.generation_title {
+  color: #000;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  max-width: 100px;
+}
+
 
 .container {
   position: relative;
