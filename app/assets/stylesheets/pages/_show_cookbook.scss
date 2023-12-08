@@ -59,12 +59,12 @@
 }
 
 .card-body {
-  padding: 0;
+  // padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 330px;
-  height: 115px;
+  height: 100px;
   flex-shrink: 0;
   border-radius: 8px;
   border-radius: 8px;
@@ -73,6 +73,8 @@
   align-content: stretch;
   align-items: center;
   position: relative;
+  padding-right: 28px;
+  padding-left: 21px;
 }
 
 .fa-plus {
