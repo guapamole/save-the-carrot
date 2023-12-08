@@ -86,37 +86,12 @@
     </div>
   </div>
 
-  <%# Loader start %>
-  <div class="loader-overlay d-none" data-loader-target="loader">
-      <div class="overlay" onclick="showSpinner()">
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-
-      <div class="message content hidden">
-        <h1 class="p-5 text-center"> On cherche de délicieuses recettes ...</h1>
-        <%# <h1 class="modal-content"> de délicieuses </h1>
-        <h1 class="modal-content"> recettes ... </h1> %>
-
-        <div class="logo">
-          <div class="rotating" style="width: 100px; height: 100px; line-height: 100px; text-align: center;">
-          <%= image_tag("carrot-logo.png", class: "image-logo") %>
-          </div>
-        </div>
-
-
-      </div>
-  </div>
-
-    <%# Loader end %>
-
 
 
 
   <!-- Modal filtres-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="pointer-events:none;">
+    <div class="modal-dialog" style="pointer-events:auto;">
       <div class="bg-content bg-warning-subtle">
 
         <div class="modal-header border-0">
@@ -135,9 +110,7 @@
       </div>
     </div>
 
-
   </div>
-
 </div>
 
 <script>
