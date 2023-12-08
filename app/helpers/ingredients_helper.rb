@@ -37,7 +37,11 @@ module IngredientsHelper
         return "ingredient_img/kiwi.png"
       end
 
-      if name == "laitue"
+      if name.match?(/laitue/)
+        return "ingredient_img/laitue.png"
+      end
+
+      if name.match?(/salade/)
         return "ingredient_img/laitue.png"
       end
 
