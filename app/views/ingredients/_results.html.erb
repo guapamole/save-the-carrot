@@ -1,3 +1,9 @@
+<div  data-controller="results">
+
+<div class="instruction">
+  <p class="m-0"> Sélectionnez vos ingrédients !</p>
+</div>
+
 <% ingredients.each do |ingredient| %>
 
     <%# <div class="ingredient-card">
@@ -9,13 +15,17 @@
 
 
 
-<div class="card-design" style="card-design">
-  <div class="card-body">
-    <%= image_tag("marmite.png", class: "vegetable") %>
-    <p class="generation_title fw-semibold"><%= ingredient["name"] %></p>
-
-    <%= link_to "", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] }, class:"fa-solid fa-plus"%>
+  <div class="card-design" style="card-design">
+    <div class="card-body">
+      <%= image_tag("marmite.png", class: "vegetable") %>
+        <p class="generation_title fw-semibold"><%= ingredient["name"] %>
+        </p>
+        <%= link_to "", add_ingredients_path, data: { turbo_method: :post, action: "click->results#add", results_ingredient_name_param: ingredient["name"] }, class:"fa-regular fa-square-plus"%>
+    </div>
   </div>
-</div>
 
 <% end %>
+
+ <button class="btn-patate-forme" id="validate-fridge-button">Valider mon frigo</button>
+
+</div>

@@ -84,3 +84,11 @@
     background-position: center;
   }
 }
+
+.fa-square-plus {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: #F28E19
+  }
+}
